@@ -9,4 +9,11 @@ obj['Name'] = "Aman Raj"
 //add
 obj['Address'] = "Rajasthan"
 
+//delete
+delete obj['Location']
+
 console.log(obj);
+
+for( let x in obj){
+    console.log(x+'-'+obj[x])
+}
