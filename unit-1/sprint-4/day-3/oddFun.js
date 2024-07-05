@@ -3,9 +3,11 @@ function oddnum(a){
         return true
     }else{
         return false
-        ;
     }
 }
 
-x= oddnum(6);
-console.log(x);
+for( let i=0; i<=100; i++){
+    let ans= (oddnum(i))
+    if(ans==true)
+        console.log(i,"is divisible by 3")
+}
