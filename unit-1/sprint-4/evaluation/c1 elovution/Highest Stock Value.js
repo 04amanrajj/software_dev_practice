@@ -5,5 +5,8 @@ function stockValue(n,arr){
         if(bull<sum){
             bull=sum
         }
+        if(bull<0){
+            bull=0
+        }
     }console.log(bull)
 }
