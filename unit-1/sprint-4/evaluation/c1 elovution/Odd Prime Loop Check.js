@@ -21,3 +21,5 @@ function primeLoopCheck(num) {
     }
   }
 }
+
+primeLoopCheck(13)
