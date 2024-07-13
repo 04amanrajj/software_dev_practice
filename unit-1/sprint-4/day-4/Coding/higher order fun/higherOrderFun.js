@@ -7,9 +7,7 @@ let arr = [1, 2, 34, 43, 44];
 
 //forEach : used for traversing with element and index its doesn;t return anything
 
-let data = arr.forEach((ele, i) => {
-  return { ele, i };
-});
+let data = arr.forEach((ele, i) => console.log({ele,i}));
 
 // console.log(data);
 
