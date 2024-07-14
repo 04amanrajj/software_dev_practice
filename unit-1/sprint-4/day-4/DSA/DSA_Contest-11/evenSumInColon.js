@@ -17,3 +17,5 @@ function evenSumColumns(N, M, arr) {
     console.log(sum);
   }
 }
+
+evenSumColumns(N, M, arr);
