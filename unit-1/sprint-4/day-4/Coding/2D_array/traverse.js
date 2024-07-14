@@ -7,10 +7,10 @@ let arr = [
 
 let bag = "";
 
-for (let i = 0; i < arr1.length; i++) {
+for (let i = 0; i < arr.length; i++) {
   bag = "";
-  for (let j = 0; j < arr1.length; j++) {
-    bag += arr1[j][i] + " ";
+  for (let j = 0; j < arr.length; j++) {
+    bag += arr[j][i] + " ";
   }
   console.log(bag);
 }
