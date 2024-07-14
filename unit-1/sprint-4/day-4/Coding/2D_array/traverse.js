@@ -5,12 +5,14 @@ let arr = [
   [7, 8, 9],
 ];
 
+//if rectangle matrix use arr[i].length
+
 let bag = "";
 
 for (let i = 0; i < arr.length; i++) {
-  bag = "";
-  for (let j = 0; j < arr.length; j++) {
-    bag += arr[j][i] + " ";
+  for (let j = 0; j < arr[i].length; j++) {
+    bag = "";
+    bag += arr[i][j];
+    console.log(bag);
   }
-  console.log(bag);
 }
