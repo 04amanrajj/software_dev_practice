@@ -11,6 +11,6 @@ for(let i = 0 ;i< 26;i++) alpha[String.fromCharCode(i+65)] =  String.fromCharCod
         ans+= alpha[s]
 
     }
-// console.log(ans);
+console.log(ans);
 
 
