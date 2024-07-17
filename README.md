@@ -1,19 +1,9 @@
 ## current 
 
-28 L
-higher order fun
-
-DSA - Arrays and Strings 28 
-Coding - obj methods
-
+DSA Unit Evaluation
 
 ## Assignment
 
-coding - obj methods to 30 sep 
-
-DSA Sprint Evaluation 
-DSA - Contests 4
-DSA 5
 
 DSA Unit Evaluation 
 
