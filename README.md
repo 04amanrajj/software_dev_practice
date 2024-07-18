@@ -11,6 +11,7 @@ DSA Unit Evaluation
 
 # unit two starting 
 
-assignment : https://students.masaischool.com/assignments?tab=all&page=17
-lect : https://students.masaischool.com/lectures?page=26&tab=all
-
+lecture  : pre class and html intro
+            input taking 
+assignement : html assigment
+              dsa conetest
