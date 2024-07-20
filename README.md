@@ -1,6 +1,38 @@
 ## current 
 
-DSA 201
+css{
+	color
+	background color
+	font size
+	text align
+	boxes
+	display:felx(use in perent)
+	margin(outside ur box) & padding(inside ur box)
+	justify contant	
+}
+
+html{
+	doctype
+	heading tag
+	body tag
+	order list 
+	unorder list
+	sublist
+	img insert
+	link insert
+	input field
+	table
+	
+}
+
+DSA201{
+	t.c &&s.c
+	Slding Window
+	Sorting
+	-key value pairs
+	TWo pointers
+
+}
 
 ## Assignment
 
