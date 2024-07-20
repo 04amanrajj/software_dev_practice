@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U2C1</title>
+    <style>
+      #music-cards {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 50px;
+      }
+      #music-cards div {
+        text-align: center;
+        padding: 10px;
+      }
+      #music-cards img {
+        width: auto;
+        height: auto;
+      }
+      #guests {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 50px;
+      }
+      .guest {
+        background-color: rgb(255, 255, 255);
+        justify-content: space-between;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        width: 30%;
+        margin: 2%;
+      }
+      .guest img {
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+      }
+      .guest h3 {
+        margin-top: 10px;
+        font-size: 1.5em;
+      }
+      .guest p {
+        margin-top: 10px;
+        font-size: 1em;
+      }
+      .guest button {
+        color: white;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: hwb(0 38% 18%);
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      #albums {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .devices {
+        text-align: left;
+        height: auto;
+        width: 19%;
+      }
+
+      .devices img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(235, 235, 235); text-align: center">
+    <!-- Top-section -->
+    <h1 style="color: darkorange">Get ready for seamless online music</h1>
+    <div id="music-cards">
+      <!-- This section should contain 4 children divs, each div should have img,h4,p -->
+      <div>
+        <img
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-06-22/1_478664.webp"
+          alt="Offline mode"
+        />
+        <h4>Offline mode</h4>
+        <p>Save and listen anywhere.</p>
+      </div>
+      <div>
+        <img
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-06-22/2_611568.webp"
+          alt="High quality audio"
+        />
+        <h4>High quality audio</h4>
+        <p>Enjoy the full range of sound.</p>
+      </div>
+      <div>
+        <img
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-06-22/3_784633.webp"
+          alt="No ads"
+        />
+        <h4>No ads</h4>
+        <p>Enjoy nonstop music.</p>
+      </div>
+      <div>
+        <img
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-06-22/4_716330.webp"
+          alt="Unlimited skips"
+        />
+        <h4>Unlimited skips</h4>
+        <p>Just tap skip.</p>
+      </div>
+    </div>
+
+    <!-- Medium-section -->
+    <h1 style="color: darkorange">Featured Guests</h1>
+    <div id="guests">
+      <div class="guest">
+        <img
+          src="https://img.freepik.com/premium-vector/man-with-shirt-that-says-he-is-man_169196-12880.jpg?w=826"
+          alt="person 1"
+        />
+        <h3>Megan Smith</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, aut
+          praesentium dolor perferendis iste reprehenderit rerum dolorem. Quasi
+          facere blanditiis tempora libero officiis optio est aperiam? Ab error
+          alias quos!
+        </p>
+        <button>Register</button>
+      </div>
+      <div class="guest">
+        <img
+          src="https://img.freepik.com/premium-vector/man-with-shirt-that-says-he-is-man_169196-12880.jpg?w=826"
+          alt="person 2"
+        />
+        <h3>Brooke Kagl</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, aut
+          praesentium dolor perferendis iste reprehenderit rerum dolorem. Quasi
+          facere blanditiis tempora libero officiis optio est aperiam? Ab error
+          alias quos!
+        </p>
+        <button>Register</button>
+      </div>
+      <div class="guest">
+        <img
+          src="https://img.freepik.com/premium-vector/man-with-shirt-that-says-he-is-man_169196-12880.jpg?w=826"
+          alt="person 3"
+        />
+        <h3>Philip Martin</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, aut
+          praesentium dolor perferendis iste reprehenderit rerum dolorem. Quasi
+          facere blanditiis tempora libero officiis optio est aperiam? Ab error
+          alias quos!
+        </p>
+        <button>Register</button>
+      </div>
+    </div>
+
+    <!-- bottom-section -->
+    <div id="albums">
+      <div class="devices">
+        <img
+          src="https://preview.colorlib.com/theme/onemusic/img/bg-img/b1.jpg"
+          alt="soundboard"
+        />
+        <h3>Garage Band</h3>
+        <p>Radio Station</p>
+      </div>
+      <div class="devices">
+        <img
+          src="https://preview.colorlib.com/theme/onemusic/img/bg-img/b2.jpg"
+          alt="soundboard"
+        />
+        <h3>Garage Band</h3>
+        <p>Radio Station</p>
+      </div>
+      <div class="devices">
+        <img
+          src="https://preview.colorlib.com/theme/onemusic/img/bg-img/b1.jpg"
+          alt="soundboard"
+        />
+        <h3>Garage Band</h3>
+        <p>Radio Station</p>
+      </div>
+      <div class="devices">
+        <img
+          src="https://preview.colorlib.com/theme/onemusic/img/bg-img/b2.jpg"
+          alt="soundboard"
+        />
+        <h3>Garage Band</h3>
+        <p>Radio Station</p>
+      </div>
+      <div class="devices">
+        <img
+          src="https://preview.colorlib.com/theme/onemusic/img/bg-img/b1.jpg"
+          alt="soundboard"
+        />
+        <h3>Garage Band</h3>
+        <p>Radio Station</p>
+      </div>
+    </div>
+  </body>
+</html>
