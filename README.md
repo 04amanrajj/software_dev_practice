@@ -38,7 +38,7 @@ DSA201{
 
 
 DSA
-CSS
+CSS- selectors assignments
 HTML
 
 
