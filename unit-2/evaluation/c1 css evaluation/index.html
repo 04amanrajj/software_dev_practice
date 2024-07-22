@@ -8,84 +8,103 @@
     <style>
       /* Write all necessary CSS here only */
       /* CSS Adjustments */
-body {
-  background-color: whitesmoke;
-  margin: 0;
-}
+      body {
+        background-color: whitesmoke;
+        margin: 0;
+      }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Ensure padding is included in the width */
-}
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+      }
 
-.nav .logo {
-  flex-shrink: 0; /* Prevent the logo from shrinking */
-}
+      .nav .logo {
+        padding-left: 5%;
+        flex-shrink: 0;
+      }
 
-.options {
-  display: flex;
-  gap: 15px;
-  flex-grow: 1;
-  justify-content: center;
-}
+      .options {
+        display: flex;
+        gap: 15px;
+        flex-grow: 1;
+        justify-content: center;
+      }
 
-.options div {
-  padding: 10px;
-  background-color: white;
-}
+      .options div {
+        padding: 10px;
+        background-color: white;
+      }
 
-.container {
-  padding: 0% 5%;
-  text-align: left;
-}
+      .container {
+        padding: 0% 5%;
+        text-align: left;
+      }
 
-.top {
-  margin-top: 2%;
-  border-radius: 15px;
-  padding: 5%;
-  text-align: center;
-  background-color: #282869;
-  overflow: hidden;
-}
+      .top {
+        margin-top: 2%;
+        border-radius: 15px;
+        padding: 5%;
+        text-align: center;
+        background-color: #282869;
+        overflow: hidden;
+      }
 
-.top button {
-  padding: 5px 20px;
-  background-color: #00aeff;
-}
+      .top button {
+        padding: 5px 20px;
+        background-color: #00aeff;
+      }
 
-.top h1,
-h3,
-button {
-  border-radius: 5px;
-  border: none;
-  color: white;
-}
+      .top h1,
+      h3,
+      button {
+        border-radius: 5px;
+        border: none;
+        color: white;
+      }
 
-.mid-elements {
-  justify-content: space-between;
-  display: flex;
-  width: auto;
-}
+      .mid-elements {
+        justify-content: space-between;
+        display: flex;
+        width: auto;
+      }
 
-.card img {
-  border-radius: 50%;
-}
+      .card img {
+        border-radius: 50%;
+      }
 
-.card {
-  padding: 1%;
-  width: 12%;
-  margin: 1%;
-  background-color: white;
-  text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+      .card {
+        padding: 1%;
+        width: 12%;
+        margin: 1%;
+        background-color: white;
+        text-align: left;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
+      #features,#features2 {
+        
+        text-align: center;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .under {
+        background-color: white;
+        flex: 1;
+        margin: 10px;
+        /* border: 2px solid black; */
+        margin-bottom: 5%;
+        box-sizing: border-box;
+      }
+      .under h3 {
+        color: black;
+      }
     </style>
   </head>
   <body>
@@ -187,6 +206,77 @@ button {
       <div class="bottom">
         <h1>Charges outside of INDmoney</h1>
         <!-- Create the Bottom Part Here  -->
+        <h2>US stocks</h2>
+      <div id="features">
+        <div class="under">
+          <img
+            src="https://www.indmoney.com/stencil/images?url=/images/pricing-page/graph.png&w=3840&q=75"
+            alt=""
+          />
+          <h3>Taxation</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+            aperiam incidunt quod mollitia perferendis commodi error.
+          </p>
+        </div>
+        <div class="under">
+          <img
+            src="https://www.indmoney.com/stencil/images?url=/images/pricing-page/graph.png&w=3840&q=75"
+            alt=""
+          />
+          <h3>Taxation</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+            aperiam incidunt quod mollitia perferendis commodi error.
+          </p>
+        </div>
+        <div class="under">
+          <img
+            src="https://www.indmoney.com/stencil/images?url=/images/pricing-page/graph.png&w=3840&q=75"
+            alt=""
+          />
+          <h3>Taxation</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+            aperiam incidunt quod mollitia perferendis commodi error.
+          </p>
+        </div>
+      </div>
+      <h2>Mutual Fund</h2>
+      <div id="features2">
+        <div class="under">
+          <img
+            src="https://www.indmoney.com/stencil/images?url=/images/pricing-page/graph.png&w=3840&q=75"
+            alt=""
+          />
+          <h3>Taxation</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+            aperiam incidunt quod mollitia perferendis commodi error.
+          </p>
+        </div>
+        <div class="under">
+          <img
+            src="https://www.indmoney.com/stencil/images?url=/images/pricing-page/graph.png&w=3840&q=75"
+            alt=""
+          />
+          <h3>Taxation</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+            aperiam incidunt quod mollitia perferendis commodi error.
+          </p>
+        </div>
+        <div class="under">
+          <img
+            src="https://www.indmoney.com/stencil/images?url=/images/pricing-page/graph.png&w=3840&q=75"
+            alt=""
+          />
+          <h3>Taxation</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+            aperiam incidunt quod mollitia perferendis commodi error.
+          </p>
+        </div>
       </div>
     </div>
   </body>
