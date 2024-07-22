@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-101 C1</title>
+    <style>
+      /* Write all necessary CSS here only */
+      /* CSS Adjustments */
+body {
+  background-color: whitesmoke;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.nav .logo {
+  flex-shrink: 0; /* Prevent the logo from shrinking */
+}
+
+.options {
+  display: flex;
+  gap: 15px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.options div {
+  padding: 10px;
+  background-color: white;
+}
+
+.container {
+  padding: 0% 5%;
+  text-align: left;
+}
+
+.top {
+  margin-top: 2%;
+  border-radius: 15px;
+  padding: 5%;
+  text-align: center;
+  background-color: #282869;
+  overflow: hidden;
+}
+
+.top button {
+  padding: 5px 20px;
+  background-color: #00aeff;
+}
+
+.top h1,
+h3,
+button {
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.mid-elements {
+  justify-content: space-between;
+  display: flex;
+  width: auto;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
+.card {
+  padding: 1%;
+  width: 12%;
+  margin: 1%;
+  background-color: white;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- This is the Navbar  -->
+    <div class="nav">
+      <img
+        class="logo"
+        src="https://cdn.indiawealth.in/cdn/images/fe/INDlogo_black_tm.png"
+        alt="TopLogo"
+      />
+      <div class="options">
+        <!-- Different Options Should Go Here  -->
+        <div><h2>Explore</h2></div>
+        <div><h2>Features</h2></div>
+        <div><h2>Pricing</h2></div>
+        <div><h2>Blog</h2></div>
+        <div><h2>Customer Service</h2></div>
+        <div><h2>Login</h2></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="top">
+        <!-- Create the Top Part Using This  -->
+        <h1>Get Free US Stocks Worth Upto $10*</h1>
+        <h3>on your first US Stock Funding</h3>
+        <button>Claim</button>
+      </div>
+      <div class="mid">
+        <h2>Invest in top tech stocks</h2>
+        <div class="mid-elements">
+          <!-- Create 8 Cards here  -->
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>Apple Inc.</p>
+            <p>$164.5</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>Microsoft</p>
+            <p>$164.5</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>Google</p>
+            <p>$164.5</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>Tiwan Semiconductor</p>
+            <p>$164.5</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>NVIDIA</p>
+            <p>$164.5</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>Broadcom Inc.</p>
+            <p>$164.5</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>Johnson & Johnson</p>
+            <p>$164.5</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://cdn.indiawealth.in/public/images/usstocks/US-STOCKS-2X/AAPL@2x.jpg"
+              alt=""
+            />
+            <p>Merekeo Inc.</p>
+            <p>$164.5</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <h1>Charges outside of INDmoney</h1>
+        <!-- Create the Bottom Part Here  -->
+      </div>
+    </div>
+  </body>
+</html>
