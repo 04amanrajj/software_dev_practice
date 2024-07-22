@@ -1,4 +1,24 @@
+##Future
+
+DSA- logorithms,Slding Window,TWo pointers,Sorting
+CSS- Flex
+
 ## current 
+
+DSA-st.c &&s.c
+CSS Combinators
+
+
+## Assignment
+
+
+DSA-
+CSS-
+HTML-
+
+
+
+# unit two starting 
 
 css{
 	color
@@ -23,31 +43,10 @@ html{
 	table
 	
 }
-
-DSA201{
-	t.c &&s.c
-	Slding Window
-	Sorting
-	-key value pairs
-	TWo pointers
-
+DSA{
+    2d array
+    key & value pairs
 }
-
-## Assignment
-
-
-DSA
-CSS- selectors assignments
-HTML
-
-
-
-# unit two starting 
-
-lecture  : pre class and html intro
-            input taking 
-assignement : html assigment
-              dsa conetest
               
 
               
