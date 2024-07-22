@@ -10,7 +10,7 @@ css{
 	margin(outside ur box) & padding(inside ur box)
 	justify contant	
 }
-
+ 
 html{
 	doctype
 	heading tag
