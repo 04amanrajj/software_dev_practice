@@ -6,7 +6,7 @@ function logic(n,mat) {
       }
       console.log(bag.trim());
     }
-  }
+  } 
   
   function runProgram(input) {
     input = input.split("\n");
