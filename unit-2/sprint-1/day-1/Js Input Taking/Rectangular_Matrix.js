@@ -20,8 +20,6 @@ function logic(n,m,mat) {
   //   console.log(n,m)
      for(let j=0;j<n;j++){
         mat.push(input[i++].split(' ').map(Number))
-      
-         
      }
      logic(n,m,mat)
   }
