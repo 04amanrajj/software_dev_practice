@@ -5,7 +5,7 @@ CSS- Flex
 
 ## current 
 
-DSA-st.c &&s.c
+DSA- t.c &&s.c
 CSS Combinators
 
 
