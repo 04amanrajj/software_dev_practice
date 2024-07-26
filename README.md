@@ -1,6 +1,6 @@
 ##Future
 
-DSA- logorithms,Slding Window,TWo pointers,Sorting
+DSA- Slding Window,TWo pointers,Sorting
 CSS- Flex
 
 ## current 
