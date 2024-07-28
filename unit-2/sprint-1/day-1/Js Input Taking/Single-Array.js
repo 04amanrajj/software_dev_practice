@@ -1,6 +1,6 @@
 function logic(n,str){
     str=str.split(' ').map(Number)
-    let bag=''
+    let bag='' 
     for(let i of str){
         bag+=i+1+' '
     }
