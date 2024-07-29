@@ -1,1 +1,1 @@
-input test
+this folder is for JS input taking questions
