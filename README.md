@@ -5,7 +5,7 @@ CSS- Flex,grid,media queries,dom
 
 ## current 
 
-DSA- 2 poiner
+DSA- 2 poiner 
 CSS Combinators
 
 
