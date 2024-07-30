@@ -1,11 +1,11 @@
 ##Future
 
 DSA- Slding Window,TWo pointers,Sorting
-CSS- Flex
+CSS- Flex,grid,media queries,dom
 
 ## current 
 
-DSA- t.c &&s.c
+DSA- 2 poiner
 CSS Combinators
 
 
