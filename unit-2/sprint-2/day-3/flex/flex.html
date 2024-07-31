@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+  </head>
+  <style>
+    #container {
+      background-color: whitesmoke;
+      /* border: 2px solid red; */
+      text-align: center;
+    }
+    .nav {
+      padding: 0% 1%;
+      display: flex;
+      justify-content: end;
+      background-color: darkviolet;
+      box-shadow: 0px 1px 10px;
+    }
+    .nav img {
+      margin-right: auto;
+    }
+    .nav h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: large;
+      padding: 0px 1%;
+      color: white;
+    }
+    .down h1 {
+      color: red;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+    .down {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .pic {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      /* border: 2px solid red; */
+      align-items: center;
+    }
+    .card img {
+      width: 90%;
+      height: 90%;
+      margin-bottom: 20px;
+      /* border: 2px solid black; */
+      border-radius: 30px;
+      box-shadow: 0px 1px 10px;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="nav">
+        <img
+          src="https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg"
+          alt="Masai logo"
+        />
+        <h1>HOME</h1>
+        <h1>GALLERY</h1>
+        <h1>ABOUT</h1>
+      </div>
+      <div class="down">
+        <h1>Photo Gallery</h1>
+        <div class="pic">
+          <div class="card">
+            <img
+              src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"
+              alt=""
+            />
+          </div>
+          <div class="card">
+            <img
+              src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"
+              alt=""
+            />
+          </div>
+          <div class="card">
+            <img
+              src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"
+              alt=""
+            />
+          </div>
+          <div class="card">
+            <img
+              src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"
+              alt=""
+            />
+          </div>
+          <div class="card">
+            <img
+              src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"
+              alt=""
+            />
+          </div>
+          <div class="card">
+            <img
+              src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
