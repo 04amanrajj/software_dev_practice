@@ -1,11 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NEWS</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <style>
+    #container {
+      /* text-align: center; */
+      background-color:  whitesmoke;
+    }
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* background-color: skyblue; */
+    }
+    .card1 {
+      display: flex;
+      width: 60%;
+      justify-content: space-between;
+      /* border: 2px solid red; */
+    }
+    .panel {
+      width: 30%;
+      gap: 10px;
+      box-sizing: border-box;
+      padding: 20px;
+      /* border: 3px solid blue; */
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 1px 10px;
+    }
+    .panel img {
+      border: 1px solid black;
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+    }
+    .top button{
+        margin-top: 20px;
+        border-radius: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        background-color: skyblue;
+        color: black;
+    }
+    .down h1{
+        text-align: center;
+    }
+    .card2{
+        margin: auto;
+        justify-content: space-around;
+        width: 80%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .panel2 img{
+        border-radius: 10px;
+        /* border:2px solid black; */
+        box-shadow: 0px 1px 10px;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="top">
+        <h1>Masai in The News</h1>
+        <div class="card1">
+          <div class="panel">
+            <img
+              src="https://masai-website-images.s3.ap-south-1.amazonaws.com/money_Control_c3e25f5ceb.png"
+              alt=""
+            />
+            <p>
+              26 Oct 2021 <hr> <br />Kunal Shah, Vijay Shekhar Sharma, Amrish Rau
+              among 21 angel investors in Masai School <br />
+              Masai School is aiming to expand to 20 smaller cities by March
+              2022
+            </p>
+          </div>
+          <div class="panel">
+            <img
+              src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ET_3754cc10ec.png"
+              alt=""
+            />
+            <p>
+              26 Oct 2021 <hr> <br />Kunal Shah, Vijay Shekhar Sharma, Amrish Rau
+              among 21 angel investors in Masai School <br />
+              Masai School is aiming to expand to 20 smaller cities by March
+              2022
+            </p>
+          </div>
+          <div class="panel">
+            <img
+              src="https://masai-website-images.s3.ap-south-1.amazonaws.com/vccircle_6ef779c958.png"
+              alt=""
+            />
+            <p></p>
+            <p>
+              26 Oct 2021 <hr> <br />Kunal Shah, Vijay Shekhar Sharma, Amrish Rau
+              among 21 angel investors in Masai School <br />
+              Masai School is aiming to expand to 20 smaller cities by March
+              2022
+            </p>
+          </div>
+        </div>
+        <button>See More ></button>
+      </div>
+      <div class="down">
+        <h1>Our Investors (Who believed in us)</h1>
+        <div class="card2">
+          <div class="panel2">
+            <img
+              src="https://www.masaischool.com/images/our-investors/india-q-borderless.svg"
+              alt=""
+            />
+          </div>
+          <div class="panel2">
+            <img
+              src="https://www.masaischool.com/images/our-investors/omidyar-borderless.svg"
+              alt=""
+            />
+          </div>
+          <div class="panel2">
+            <img
+              src="https://www.masaischool.com/images/our-investors/capria-logo.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
