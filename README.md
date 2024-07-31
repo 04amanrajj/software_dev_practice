@@ -1,6 +1,6 @@
 ##Future
 
-DSA- Slding Window,TWo pointers,Sorting
+DSA- 2 pointers, Slding Window, Sorting
 CSS- Flex,grid,media queries,dom
 
 ## current 
@@ -12,23 +12,18 @@ CSS Combinators
 ## Assignment
 
 
-DSA-
-CSS-
-HTML-
+DSA- 2 pointer 
+CSS- flex
+HTML- Done
 
 
 
-# unit two starting 
+# unit two
 
 css{
-	color
-	background color
-	font size
-	text align
-	boxes
-	display:felx(use in perent)
-	margin(outside ur box) & padding(inside ur box)
-	justify contant	
+	style box model
+	selectors
+	combinators
 }
 html{
 	doctype
@@ -41,11 +36,12 @@ html{
 	link insert
 	input field
 	table
-	
 }
 DSA{
     2d array
     key & value pairs
+    logorithms
+    tc&sc
 }
               
 
