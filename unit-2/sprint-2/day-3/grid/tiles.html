@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiles</title>
+  </head>
+  <style>
+    #container {
+      text-shadow: darkblue 1px 1px;
+      color: white;
+      margin: auto;
+      border: 2px solid red;
+      /* width: 50%; */
+      text-align: center;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 200px);
+      gap: 10px;
+
+    }
+    #container > div{
+              border-radius: 20px;
+              box-shadow: 10px 10px 10px 10px;
+    }
+    #container > div:nth-child(1) {
+      background-color: blue;
+
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    #container > div:nth-child(2) {
+      background-color: forestgreen;
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+    #container > div:nth-child(3) {
+      background-color: yellow;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    #container > div:nth-child(4) {
+      background-color: red;
+      grid-column-start: 2;
+      grid-column-end: 5;
+    }
+    #container > div:nth-child(5) {
+      background-color: brown;
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+    
+  </style>
+  <body>
+    <div id="container">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+      <div>D</div>
+      <div>E</div>
+    
+    </div>
+  </body>
+</html>
