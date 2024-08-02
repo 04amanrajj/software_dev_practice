@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard</title>
+  </head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+    #container {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      background-color: skyblue;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .body {
+      align-content: center;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      padding: 1em;
+      border-radius: 10px;
+      gap: 5px;
+
+      background-color: gray;
+    }
+    .body > div {
+      height: 100%;
+      width: 100%;
+      font-size: 1em;
+      border-radius: 3px;
+      color: white;
+      background-color: black;
+      /* padding: 1px; */
+    }
+    .body > div:nth-child(35) {
+      grid-column: 11 / span 2;
+    }
+    .body > div:nth-child(46) {
+      grid-column: 11 / span 2;
+    }
+    .body > div:nth-child(51) {
+      grid-column: 5 / span 4;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="body">
+        <div>~</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div>delete</div>
+        <div>tab</div>
+        <div>Q</div>
+        <div>W</div>
+        <div>E</div>
+        <div>R</div>
+        <div>T</div>
+        <div>Y</div>
+        <div>U</div>
+        <div>I</div>
+        <div>O</div>
+        <div>P</div>
+        <div>\</div>
+        <div>caps</div>
+        <div>A</div>
+        <div>S</div>
+        <div>D</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div>Enter</div>
+        <div>Shift</div>
+        <div>Z</div>
+        <div>X</div>
+        <div>C</div>
+        <div>V</div>
+        <div>B</div>
+        <div>N</div>
+        <div>M</div>
+        <div><</div>
+        <div>></div>
+        <div>Shift</div>
+        <div>Ctrl</div>
+        <div>Win</div>
+        <div>alt</div>
+        <div>fn</div>
+        <div>Space</div>
+        <div>alt</div>
+        <div>Ctrl</div>
+        <div><-</div>
+        <div>-></div>
+      </div>
+    </div>
+  </body>
+</html>
