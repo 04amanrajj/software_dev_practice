@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mq</title>
+  </head>
+  <style>
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    #container {
+      /* display: flex;
+      flex-direction: column; */
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      background-color: grey;
+      width: 50%;
+    }
+    .nav {
+      background-color: yellow;
+    }
+    .down {
+      display: flex;
+    }
+    .left {
+      background-color: red;
+      width: 100%;
+    }
+    .right {
+      background-color: green;
+      height: 50px;
+      width: 100%;
+    }
+
+    @media screen and (min-width: 700px) and (max-width: 1270px) {
+      .down {
+        display: grid;
+        /* gap: 10px;   */
+      }
+      .right {
+        justify-content: space-between;
+        display: flex;
+      }
+    }
+    @media screen and (min-width: 1px) and (max-width: 699px) {
+      .down {
+        display: flex;
+        flex-direction: column;
+        /* gap: 10px;   */
+      }
+      .right {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="nav">Navigation</div>
+      <div class="down">
+        <div class="left"><div>L</div></div>
+        <div class="right">
+          <div>R1</div>
+          <div>R2</div>
+          <div>R3</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
