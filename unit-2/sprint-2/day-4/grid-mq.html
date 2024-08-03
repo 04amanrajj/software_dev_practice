@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+  </head>
+  <style>
+    #container {
+      background-color: dimgray;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: auto;
+      gap: 20px;
+    }
+    .card {
+      padding: 0px 50px;
+      border-radius: 20px;
+      background-color: antiquewhite;
+    }
+    .card div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media screen and (min-width: 720px) and (max-width: 1280px) {
+    
+    #conatiner{
+        color: aqua;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: auto;
+    }
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h1>Coffie</h1>
+          <h1>$49</h1>
+        </div>
+        <div>
+          <p>usage of the inter is becoming more common due to rapid advance</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
