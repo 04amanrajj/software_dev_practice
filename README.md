@@ -1,19 +1,18 @@
 ##Future
 
-DSA- Slding Window, Sorting
+DSA- Sorting
 CSS- dom
 
 ## current 
 
-DSA- 2 poiner 
+DSA- Slding Window
 CSS dom
 
 
 ## Assignment
 
-
 DSA- 2 pointer 
-CSS- media queries
+CSS- dom
 HTML- Done
  
 
