@@ -1,12 +1,12 @@
 ##Future
 
-DSA- 2 pointers, Slding Window, Sorting
-CSS- media queries,dom
+DSA- Slding Window, Sorting
+CSS- dom
 
 ## current 
 
 DSA- 2 poiner 
-CSS media queries
+CSS dom
 
 
 ## Assignment
@@ -26,6 +26,7 @@ css{
 	combinators
 	Flex
 	grid
+	media queries
 }
 html{
 	doctype
