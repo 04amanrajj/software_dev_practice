@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body{
+        text-align: center;
+    }
+  </style>
+  <body>
+    
+    <p>enter ur name</p>
+    <input id="display" type="text" placeholder="name" />
+    <button onclick="user()" type="submit">submit</button>
+    <hr><h1 id="head">Like?</h1>
+
+    <button onclick="like()">Like</button>
+
+    <!-- <p id="pera">JavaScript</p> -->
+  </body>
+</html>
+<script>
+  //   function like() {
+  //     alert("Hello");
+  //   }
+  //   let a = document.getElementById("head").innerText;
+  //   console.log(a);
+
+  function like() {
+    document.getElementById("head").innerText = "Thanks for like";
+  }
+  function user() {
+    let x = document.getElementById("display").value;
+    alert(x)
+  }
+</script>
