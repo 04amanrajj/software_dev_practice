@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+  </head>
+  <style>
+    #container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 400px;
+      margin: auto;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <input id="d1" type="number" placeholder="enter 1st number" />
+      <input id="d2" type="number" placeholder="enter 1st number" />
+      <button onclick="add()">Add</button>
+      <button onclick="sub()">Subtract</button>
+      <button onclick="multi()">Multiply</button>
+      <button onclick="divide()">Divide</button>
+    </div>
+  </body>
+</html>
+<script>
+  function add() {
+    let x = document.getElementById("d1").value,
+      y = document.getElementById("d2").value;
+
+    x = +x;
+    y = +y;
+    alert(x + y);
+  }
+  function sub() {
+    let x = document.getElementById("d1").value,
+      y = document.getElementById("d2").value;
+
+    x = +x;
+    y = +y;
+    alert(x - y);
+  }
+  function multi() {
+    let x = document.getElementById("d1").value,
+      y = document.getElementById("d2").value;
+
+    x = +x;
+    y = +y;
+    alert(x * y);
+  }
+  function divide() {
+    let x = document.getElementById("d1").value,
+      y = document.getElementById("d2").value;
+
+    x = +x;
+    y = +y;
+    alert(x / y);
+  }
+</script>
