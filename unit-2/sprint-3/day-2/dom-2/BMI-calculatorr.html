@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Body Mass Index</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Check your Body Mass Index</h1>
+      <h2>Enter ur weight and height below to check ur BMI result</h2>
+      <h2>put ur weight in here (KG)</h2>
+      <input id="kg" type="number" />
+      <h2>And ur height in here (CM)</h2>
+      <input id="cm" type="number" />
+      <button onclick="res()">Calculate BMI</button>
+      <h1 class="output">Waiting for input</h1>
+    </div>
+  </body>
+</html>
+<script>
+  function res() {
+    let weight = document.getElementById("kg").value;
+    let height = document.getElementById("cm").value;
+    let result = eval(weight / (height * height));
+    let mota = "";
+    let ress = document.querySelector(".output");
+    result = result * 10000;
+    result = result.toFixed(2);
+    if (result <= 18.4) {
+      mota = "UnderWeight";
+    } else if (result >= 18.5 && result <= 24.9) {
+      mota = "NormalWeight";
+    } else if (result >= 25 && result <= 29.9) {
+      mota = "OverWeight";
+    } else {
+      mota = "Obese";
+    }
+    ress.textContent =
+      "your BMI is " + " " + result + " " + "which means You are" +' '+ mota;
+  }
+</script>
