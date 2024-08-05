@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score</title>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+        border: 2px solid red;
+        /* height: 500px; */
+      }
+      .top {
+        text-align: center;
+        color: black;
+        font-size: larger;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+      .min,
+      .max {
+        border: 2px solid black;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .min {
+        background-color: red;
+      }
+      .max {
+        background-color: green;
+      }
+      .mid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+        border: 2px solid blue;
+        /* width: 50%; */
+      }
+      #display {
+        color: white;
+        height: 100px;
+        width: 300px;
+        background-color: grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      #keys {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 100%;
+      }
+      #keys > button {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="top">
+        <div>
+          <div class="min">0</div>
+          min
+        </div>
+        <div>
+          <div class="max">0</div>
+          max
+        </div>
+      </div>
+      <div class="mid">
+        Score
+        <div id="display">#</div>
+        <div id="keys">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>0</button>
+          <button>Enter</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let keys = document.querySelectorAll("#keys>button");
+  let min = document.getElementsByClassName("min")[0].textContent;
+  let max = document.getElementsByClassName("max")[0].textContent;
+  let bag = "";
+
+  for (let i = 0; i < keys.length; i++) {
+    keys[i].addEventListener("click", press);
+  }
+
+  function press(thisKey) {
+    let key = thisKey.target.innerText;
+
+    if (key == "Enter") {
+      let numbers = document.getElementById("display").textContent;
+      let num = +numbers;
+
+      max = +max;
+      min = +min;
+
+      if (num > min) {
+        if (num > max) {
+          document.getElementsByClassName("max")[0].textContent = num;
+          max = num;
+        } else {
+          document.getElementsByClassName("min")[0].textContent = num;
+          min = num;
+        }
+      } else {
+        document.getElementsByClassName("min")[0].textContent = num;
+        min = num;
+      }
+      console.log(max, min, num);
+      console.log(typeof max);
+      document.getElementById("display").textContent = "#";
+      bag = "";
+    } else {
+      bag += key;
+      document.getElementById("display").textContent = bag;
+      console.log(key);
+    }
+  }
+</script>
