@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ms calculator</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #container {
+      display: flex;
+      margin: auto;
+      margin-bottom: 10px;
+      box-shadow: 10px 10px;
+      width: 35%;
+      text-align: center;
+      background-color: whitesmoke;
+      border: 2px solid red;
+      border-radius: 10px;
+    }
+
+    body h1 {
+      color: teal;
+      font-weight: bolder;
+    }
+
+    .grid-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 25px;
+    }
+
+    .key {
+      border-radius: 20px;
+      font-size: larger;
+      font-weight: bold;
+      padding: 2pc 0 2pc 0;
+    }
+
+    .clear {
+      border-radius: 20px;
+      font-size: larger;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    .function {
+      border-radius: 20px;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    .display {
+      font-size: 5rem;
+      margin-top: 10%;
+      width: 85%;
+      height: 80px;
+      text-align: right;
+      border: 2px solid black;
+    }
+  </style>
+
+  <body>
+    <h1>Masai Calculator</h1>
+    <div id="container">
+      <div class="body">
+        <div>
+          <input class="display" />
+          <div class="grid-buttons">
+            <button class="key">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+            <button class="function">+</button>
+            <button class="key">4</button>
+            <button class="key">5</button>
+            <button class="key">6</button>
+            <button class="function">-</button>
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+            <button class="function">*</button>
+            <button class="clear">C</button>
+            <button class="key">0</button>
+            <button class="function">=</button>
+            <button class="function">/</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let keys = document.querySelectorAll(".grid-buttons>button");
+  for (let i = 0; i < keys.length; i++) {
+    keys[i].addEventListener("click", pad);
+  }
+  let temp = "";
+  function pad(p) {
+    temp = p.target.innerText;
+
+    if (temp == "C") {
+      document.querySelector(".display").value = "";
+    } 
+    else if(temp=='='){
+        document.querySelector(".display").value=eval(document.querySelector(".display").value)
+    }
+    else {
+      document.querySelector(".display").value += temp;
+    }
+  }
+
+  let c = document.querySelector(".clear");
+</script>
