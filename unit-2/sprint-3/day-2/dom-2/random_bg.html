@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rg-bg</title>
+  </head>
+  <style>
+    body {
+      transition: background-color 0.5s;
+    }
+  </style>
+  <body>
+    <h1>window size by height and width</h1>
+    <p>height: <span id="h"></span>px</p>
+    <p>width:<span id="w"></span>px</p>
+    <p>Color: <span id="c"></span></p>
+  </body>
+</html>
+<script>
+  let h = document.querySelector("#h");
+  let w = document.querySelector("#w");
+    let c=document.querySelector("#c")
+  function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+      c.textContent=color
+    }
+    return color;
+  }
+
+  function resize() {
+    h.textContent = window.innerHeight;
+    w.textContent = window.innerWidth;
+    
+    
+    document.body.style.backgroundColor=getRandomColor()
+
+  }
+  window.onresize = resize;
+  resize()
+</script>
