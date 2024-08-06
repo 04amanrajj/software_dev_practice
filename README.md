@@ -1,7 +1,7 @@
 ##Future
 
 DSA- Sorting
-CSS- dom
+CSS- local storage
 
 ## current 
 
