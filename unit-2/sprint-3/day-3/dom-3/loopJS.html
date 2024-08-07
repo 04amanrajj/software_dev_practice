@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Submit</button>
+  </body>
+</html>
+<script>
+  let press = () => {
+    for(let i=0;i<=10;i++) {
+      let heading = document.createElement("h1");
+      heading.textContent = "hi" + ":" + i;
+      document.body.appendChild(heading);
+    }
+  };
+
+  document.querySelector("button").addEventListener("click", press);
+</script>
