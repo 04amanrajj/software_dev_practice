@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" />
+      <input type="submit" />
+      <h1>output is here</h1>
+    </form>
+  </body>
+</html>
+<script>
+  let press = () => {
+    event.preventDefault()
+    let x = document.querySelector("input").value;
+    document.querySelector("h1").textContent = x;
+  };
+  document.querySelector("form").addEventListener("submit", press);
+</script>
