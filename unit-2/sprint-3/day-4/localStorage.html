@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  //js obj
+  let obj = {
+    name: "aman",
+    place: "usa",
+  };
+
+  //using stringify on obj to convert into json obj to send to localstroage
+  //it accept perameters as key and value
+  localStorage.setItem("objData", JSON.stringify(obj));
+
+  //getItem return a value
+  //we have to give the key name to get the obj
+  let get = localStorage.getItem("objData");
+
+  //converting json obj into js obj using parse
+  JSON.parse(get);
+
+  console.log(JSON.parse(get));
+
+  //use removeItem to delete a data from localStorage
+  localStorage.removeItem("objData")
+
+
+  // use clear to delete all data from localStorage
+  localStorage.clear()
+</script>
