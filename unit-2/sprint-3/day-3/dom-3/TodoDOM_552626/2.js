@@ -17,12 +17,11 @@ function displayTable(taskObj) {
   td1.innerText = taskObj.taskName;
   let td2 = document.createElement("td");
   td2.innerText = taskObj.taskPriority;
-  if (td2.innerText == "High") {
+  if (taskObj.taskPriority == "High") {
     td2.style.backgroundColor = "red";
   } else {
     td2.style.backgroundColor = "green";
   }
-
   let td3 = document.createElement("td");
   td3.innerText = "Add to Fav";
 
