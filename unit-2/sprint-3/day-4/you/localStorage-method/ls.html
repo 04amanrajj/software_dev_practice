@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 50%;
+    }
+  </style>
+  <body>
+    <h1 id="display">What u select</h1>
+    <div>
+      <!-- for Name -->
+      <button id="storeN">Store name to LS</button
+      ><button id="getN">Get name from LS</button>
+
+      <!-- for mobile number -->
+      <button id="storeM">Store Mobile to LS</button
+      ><button id="getM">Get Mobile from LS</button>
+
+      <!-- for hobbies -->
+      <button id="storeH">Store Hobbies to LS</button>
+      <button id="getH">Get Hobbies to LS</button>
+
+      <!-- students data -->
+      <button id="storeSD">Store Students Data to LS</button>
+      <button id="getSD">Get Students Data to LS</button>
+    </div>
+  </body>
+</html>
+<script>
+  // for Name
+  document.querySelector("#storeN").addEventListener("click", function () {
+    localStorage.setItem("username", "Masai School");
+  });
+
+  document.querySelector("#getN").addEventListener("click", function () {
+    let name = localStorage.getItem("username");
+    document.querySelector("#display").textContent = name;
+  });
+
+  //   for mobile number
+  document.querySelector("#storeM").addEventListener("click", function () {
+    localStorage.setItem("mobile", "999999999");
+  });
+
+  document.querySelector("#getM").addEventListener("click", function () {
+    let mobile = localStorage.getItem("mobile");
+    document.querySelector("#display").textContent = mobile;
+  });
+
+  //   for hobbies
+  document.querySelector("#storeH").addEventListener("click", function () {
+    let hobbies = ["cricket", "music"];
+    localStorage.setItem("hobbies", JSON.stringify(hobbies));
+  });
+
+  document.querySelector("#getH").addEventListener("click", function () {
+    let hobbies = JSON.parse(localStorage.getItem("hobbies"));
+    for (let i = 0; i < hobbies.length; i++) {
+      console.log(hobbies[i]);
+    }
+  });
+
+  //   for student Data
+  document.querySelector("#storeSD").addEventListener("click", function () {
+    let students = [
+      { name: "Nrupul", place: "Banglore" },
+      { name: "Prateek", place: "Mumbai" },
+    ];
+    localStorage.setItem("studentsData", JSON.stringify(students));
+  });
+
+  document.querySelector("#getSD").addEventListener("click", function () {
+    let students = JSON.parse(localStorage.getItem("studentsData"));
+    for (let i = 0; i < students.length; i++) {
+      for (let key in students[i]) {
+        console.log(key + ":" + students[i][key]);
+      }
+    }
+  });
+</script>
