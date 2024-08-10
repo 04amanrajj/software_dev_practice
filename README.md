@@ -1,18 +1,18 @@
 ##Future
 
 DSA- Sorting
-CSS- local storage
+CSS- 
 
 ## current 
 
 DSA- Slding Window
-CSS dom
+CSS - local storage
 
 
 ## Assignment
 
 DSA- 2 pointer 
-CSS- dom
+CSS- local storage
 HTML- Done
  
 
