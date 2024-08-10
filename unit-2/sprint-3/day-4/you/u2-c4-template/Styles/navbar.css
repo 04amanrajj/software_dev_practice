@@ -1,0 +1,16 @@
+#navbar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* background-color: rgb(255, 217, 0); */
+  border-radius: 20px;
+  /* border: 2px solid black; */
+}
+#navbar > div {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+a {
+  padding: 10px;
+}
