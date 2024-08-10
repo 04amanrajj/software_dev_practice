@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <link rel="stylesheet" href="index.css" />
+  <body>
+    <div id="container">
+      <img
+        src="https://masai-website-images.s3.ap-south-1.amazonaws.com/logo.png"
+        alt=""
+      />
+      <div>
+        <form>
+          <h1>Login</h1>
+          <label for="">Phone number or email address</label><br />
+          <input
+            id="data"
+            type="text"
+            placeholder="Enter name number or email address"
+          /><br />
+          <input type="submit" /> or
+          <a href="Signup.html">Sign Up</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  document.querySelector("form").addEventListener("submit", login);
+
+  function login(event) {
+    event.preventDefault();
+
+    let data = document.querySelector("#data").value;
+    let objOld = JSON.parse(localStorage.getItem("newData"));
+
+    for (let i = 0; i < objOld.length; i++) {
+      for (let key in objOld[i]) {
+        if (data == objOld[i][key]) return alert("Login Successful")
+        
+      }alert("Nope")
+    }
+  }
+</script>
