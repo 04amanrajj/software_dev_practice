@@ -1,18 +1,38 @@
 body {
-  text-align: center;
-  width: 100px;
+  width: 60%;
   margin: auto;
+  text-align: center;
+  /* background-color: whitesmoke; */
 }
-table {
-  margin: 20px auto;
-  border-collapse: collapse;
-  width: 800px;
-}
-th,
-td {
+
+select {
   padding: 10px;
-  text-align: left;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 0 0 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Ensure borders between cells are merged */
+  margin: 20px 0; /* Add space above and below the table */
+}
+
+table, th, td {
+  border: 1px solid #ccc; /* Light grey border for table and cells */
+}
+
+th, td {
+  padding: 10px;
+  text-align: left; /* Align text to the left in cells */
+}
+
 th {
-  background-color: #f2f2f2;
+  background-color: #f4f4f4; /* Light background for header cells */
+  font-weight: bold; /* Bold text for header cells */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebra striping effect for rows */
 }
