@@ -1,23 +1,22 @@
 // Write code related to Home page here
-document.querySelector("form").addEventListener("submit", myTask);
-
 let taskArr = JSON.parse(localStorage.getItem("Objectives"))||[];
+
+let form = document.querySelector("form")
+form.addEventListener("submit", myTask);
+
 function myTask(event) {
   event.preventDefault();
 
-  let taskName = document.querySelector("#name").value;
-  let description = document.querySelector("#desc").value;
-  let taskStart = document.querySelector("#start").value;
-  let taskEnd = document.querySelector("#end").value;
-  let priority = document.querySelector("#priority").value;
-
   let objTaskList = {
-    taskName,
-    description,
-    taskStart,
-    taskEnd,
-    priority,
-  };
+   taskName :  form.name.value,
+   description :  form.desc.value,
+   taskStart :  form.start.value,
+   taskEnd :  form.end.value,
+   priority :  form.priority.value
+  }
+
+  console.log(objTaskList);
+  
   taskArr.push(objTaskList);
   localStorage.setItem("Objectives", JSON.stringify(taskArr));
 }
