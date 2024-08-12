@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+  <link rel="stylesheet" href="Styles/cart.css" />
+  <body>
+    <div id="container">
+      <div id="navbar">
+        <a href="index.html"><h1>Men's</h1></a>
+        <a href="womens.html"><h1>Women's</h1></a>
+        <a href="cart.html"><h1>My Cart</h1></a>
+      </div>
+      <h1>Your Total Bill: <span id="bill"></span></h1>
+      <h1>Total items <span id="items"></span></h1>
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+            <th>Add</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+      <div id="discount">
+        <input id="promo" placeholder="Coupon" type="text" />
+        <button class="coupon">Apply</button>
+        <button class="Procced" id="checkout-button">Procced</button>
+      </div>
+      <div id="form">
+        <form>
+          <label for="card">Card Number</label>
+          <input id="card" type="number" placeholder="Card Number" />
+
+          <label for="cvv">CVV</label>
+          <input id="cvv" type="number" placeholder="CVV" />
+
+          <label for="expire">Expiry Date</label>
+          <input id="expire" type="month" />
+
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="Scripts/cart.js"></script>

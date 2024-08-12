@@ -183,31 +183,45 @@ var womensData = [
   },
 ];
 
-function women(womensData) {
-  
-    womensData.forEach(element => {
-        let container = document.querySelector("#container");
+function displayData(womensData) {
 
-  let div = document.createElement("div");
+  womensData.forEach((element,i) => {
+    let container = document.querySelector("#container");
+    let div = document.createElement("div");
 
-  let img = document.createElement("img");
-  img.setAttribute("src", element.image_url);
+    let img = document.createElement("img");
+    img.setAttribute("src", element.image_url);
 
-  let name = document.createElement("h3");
-  name.textContent = element.name;
+    let name = document.createElement("h3");
+    name.textContent = element.name;
 
-  let price = document.createElement("h4");
-  price.textContent = "Price $"+element.price;
+    let price = document.createElement("h4");
+    price.textContent = "Price $" + element.price;
 
-  let strikedoffprice = document.createElement("h4");
-  strikedoffprice.textContent =
-    "Strike off price $" + element.strikedoffprice;
+    let strikedoffprice = document.createElement("h4");
+    strikedoffprice.textContent =
+      "Striked off price $" + element.strikedoffprice;
 
-let cart=document.createElement("button")
-cart.textContent="Add to Cart"
+    let cart = document.createElement("button");
+    cart.innerText = "Add to cart";
+    cart.addEventListener("click",function (){
+      cartFuntion(element,i)
+    })
 
-  div.append(img,name,price,strikedoffprice,cart);
-  container.append(div);
-    });
+    div.append(img, name, price, strikedoffprice, cart);
+    container.append(div);
+  });
 }
-women(womensData);
+
+displayData(womensData);
+
+
+function cartFuntion(element,i){
+
+  let arr=JSON.parse(localStorage.getItem("cart"))||[]
+arr.push(element)
+  localStorage.setItem("cart",JSON.stringify(arr))
+
+  displayData(womensData)
+
+}

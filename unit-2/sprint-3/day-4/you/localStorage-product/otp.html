@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP</title>
+  </head>
+  <link rel="stylesheet" href="Styles/navbar.css" />
+
+  <style>
+    body {
+      width: 90%;
+      height: 100%;
+      margin: auto;
+    }
+    #otp {
+      margin: 100px auto;
+      width: 25%;
+      padding: 60px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <body>
+    <div id="navbar">
+      <a href="index.html"><h1>Men's</h1></a>
+        <a href="womens.html"><h1>Women's</h1></a>
+        <a href="cart.html"><h1>My Cart</h1></a>
+    </div>
+    <div id="otp">
+      <h1>Check Your Phone for OTP</h1>
+      <input id="code" type="number" placeholder="Enter 4 digit OTP" /><button id="submit">
+        submit
+      </button>
+    </div>
+  </body>
+</html>
+<script>
+  document.querySelector("#submit").addEventListener("click", () => {
+    let inputvalue = document.querySelector("#code").value;
+    if (inputvalue == "1234") {
+      alert("Payment Successful");
+      window.location.href = "index.html";
+    } else {
+      console.log(inputvalue);
+
+      alert("Nope");
+    }
+  });
+</script>

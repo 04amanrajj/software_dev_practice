@@ -3,8 +3,8 @@ var mensData = [
     image_url:
       "https://imagescdn.reebok.in/img/app/product/3/39662701-13497348.jpg",
     name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
-    price: "1170",
-    strikedoffprice: "2599",
+    price: 1170,
+    strikedoffprice: 2599,
   },
   {
     image_url:
@@ -198,11 +198,8 @@ var mensData = [
 ];
 
 function displayData(mensData) {
-  // let h1 = document.createElement("h1");
-  // h1.textContent = "Men's Page";
-  // document.querySelector("body").appendChild(h1);
 
-  mensData.forEach((element) => {
+  mensData.forEach((element,i) => {
     let container = document.querySelector("#container");
     let div = document.createElement("div");
 
@@ -216,13 +213,29 @@ function displayData(mensData) {
     price.textContent = "Price $" + element.price;
 
     let strikedoffprice = document.createElement("h4");
-    strikedoffprice.textContent = "Striked off price $" + element.strikedoffprice;
+    strikedoffprice.textContent =
+      "Striked off price $" + element.strikedoffprice;
 
-let cart=document.createElement("button")
-cart.innerText="Add to cart"
+    let cart = document.createElement("button");
+    cart.innerText = "Add to cart";
+    cart.addEventListener("click",function (){
+      cartFuntion(element,i)
+    })
 
-    div.append(img, name, price, strikedoffprice,cart);
+    div.append(img, name, price, strikedoffprice, cart);
     container.append(div);
   });
 }
+
 displayData(mensData);
+
+
+function cartFuntion(element,i){
+
+  let arr=JSON.parse(localStorage.getItem("cart"))||[]
+arr.push(element)
+  localStorage.setItem("cart",JSON.stringify(arr))
+
+  displayData(mensData)
+
+}
