@@ -21,3 +21,27 @@
   };
   window.onresize = reportWindow;
 </script>
+
+
+
+<!-- 
+// filter
+const filter = document.getElementById('filter');
+
+filter.addEventListener('change' , ()=>{
+  let tasks = JSON.parse(localStorage.getItem("Objectives"));
+
+  if(filter.value == '') displayData(tasks)
+    
+  else filterDataByPriority(filter.value , tasks)  
+  
+})
+
+
+function filterDataByPriority(priority , data){
+  
+  let filteredData = data.filter((ele)=>{
+    return ele.priority == priority
+  })
+  displayData(filteredData)
+} -->
