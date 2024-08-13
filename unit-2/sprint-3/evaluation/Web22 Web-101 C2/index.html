@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-111 C1 Evaluation</title>
+
+    <style>
+      body {
+        width: 80%;
+        margin: auto;
+        background-color: whitesmoke;
+      }
+
+      .top {
+        background-color: whitesmoke;
+        display: flex;
+        /* border: 2px solid black; */
+        justify-content: space-between;
+        margin: 0 30px;
+        align-items: center;
+      }
+      .top > div:nth-child(1) {
+        padding: 10px;
+      }
+      .top > div:nth-child(2) {
+        display: grid;
+        gap: 20px;
+        padding: 10px;
+        margin: 20px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .top > div:nth-child(2) > div {
+        background-color: white;
+        /* border: 1px solid black; */
+        border-radius: 20px;
+        padding: 10px;
+        /* text-align: center; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .top button {
+        border-radius: 7px;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        background-color: rgb(22, 145, 22);
+      }
+
+      /* MID */
+
+      .mid > div {
+        display: flex;
+        width: 100%;
+
+        margin: auto;
+      }
+      .mid > div div {
+        padding: 10px;
+        width: 100%;
+      }
+      .mid img {
+        width: 100%;
+      }
+      .mid > h1 {
+        text-align: center;
+      }
+      /* bottom */
+      .bottom {
+        padding: 20px;
+        text-align: center;
+        background-color: #e5faf5;
+      }
+
+      .bottom > div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+        margin: auto;
+      }
+      .bottom > div + button {
+        color: white;
+        background-color: #00d09c;
+        padding: 10px;
+        border: none;
+        border-radius: 7px;
+      }
+
+      /* info */
+
+      .info {
+        display: flex;
+        background-color: #00ce9a;
+        border-radius: 20px;
+        margin: 10px;
+      }
+      .info > div {
+        color: white;
+        text-align: left;
+        margin: auto;
+        padding: 10px;
+        margin-left: 10px;
+      }
+      .info > div button {
+        color: #00ce9a;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+      }
+      .info > div img {
+        margin-top: 20px;
+      }
+      @media screen and (min-width: 701px) and (max-width: 1000px) {
+        /* Here Write all the necessery styles for Medium Screen size  */
+        /* Top */
+        .top {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .top > div:nth-child(2) {
+          display: grid;
+          gap: 20px;
+          padding: 10px;
+          margin: 20px;
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* MID */
+
+        .mid > div {
+          flex-wrap: wrap;
+        }
+        /* bottom */
+        .bottom > div {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* INfo */
+
+        .info {
+          flex-wrap: wrap;
+        }
+      }
+
+      @media screen and (min-width: 100px) and (max-width: 700px) {
+        /* Here Write all the necessery styles for Small Screen size  */
+        .top {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        /* MID */
+        .mid > div {
+          flex-wrap: wrap;
+        }
+        /* bottom */
+        .bottom > div {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+        /* info */
+
+        .info {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top">
+        <!-- This is the top part. Here should be 2 divs(flex) and inside the second div there should be 6 more divs(Grid) -->
+        <div>
+          <h1>Invest In IPOs</h1>
+          <h3>Trusted By Millions of Indians,Start Investing Today</h3>
+          <button>GET STARTED</button>
+        </div>
+        <div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h1>Mutual Funds</h1>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h1>Stocks</h1>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h1>Futures & Options</h1>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h1>US Stocks</h1>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h1>IPOs</h1>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h1>Fixed Deposits</h1>
+          </div>
+        </div>
+      </div>
+      <div class="mid">
+        <!-- This is the mid part. Here you should have div where there will be 3 more divs(flex)  -->
+
+        <h1>Keep learning Keep Growning</h1>
+        <div>
+          <div>
+            <img
+              src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/blog1.d3a78143.png"
+              alt=""
+            />
+            <h1>How to select/Pick Stocks for Intraday</h1>
+          </div>
+          <div>
+            <img
+              src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/blog1.d3a78143.png"
+              alt=""
+            />
+            <h1>Begainers Guide to Mutual Funds</h1>
+          </div>
+          <div>
+            <img
+              src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/blog1.d3a78143.png"
+              alt=""
+            />
+            <h1>How to Diversify in the time of Market Volatility</h1>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <!-- This is the bottom part. Here you should have div where there will be 6 more divs(Grid)  -->
+
+        <h1>Discover Mutual Funds</h1>
+        <h3>Search Mutual Funds,AMC's etc.</h3>
+        <div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h3>Values</h3>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h3>Values</h3>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h3>Values</h3>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h3>Values</h3>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h3>Values</h3>
+          </div>
+          <div>
+            <img src="top.svg" alt="" />
+            <h3>Values</h3>
+          </div>
+        </div>
+        <button>Explore all Mutual Funds</button>
+      </div>
+
+      <div class="info">
+        <!-- Here we should have a image and a div  -->
+        <div>
+          <h1>We are with you at every step</h1>
+          <h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+            odio tempore illum quidem inventore quas, pariatur non repudiandae
+            natus rerum
+          </h3>
+          <button>Get in Touch</button>
+        </div>
+        <div>
+          <img
+            src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/mfSupportImg.0379d5a2.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
