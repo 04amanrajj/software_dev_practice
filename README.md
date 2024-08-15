@@ -1,17 +1,17 @@
 ##Future
 
 DSA- Sorting
-CSS- 
+Coding- HTTP,Fetch,CP platform,promise,asynchronus
 
 ## current 
 
 DSA- Slding Window
-CSS - Nothing
+Coding- Nothing
 
 
 ## Assignment
 
-DSA- PSC, 2 pointer ,contest.
+DSA- contest.
 CSS- Done
 HTML- Done
  
