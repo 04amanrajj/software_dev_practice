@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Clock</title>
+  </head>
+  <style>body{
+    text-align: center;
+    background-color: whitesmoke;
+  }
+    #container {
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      align-items: center;
+    }
+    #container>div{
+        margin: 20px;
+        background-color: antiquewhite;
+        font-size: 108px;
+        padding: 30px;
+        border-radius: 30px;
+    }span{
+        font-size: 100px;
+    }
+  </style>
+  <body>
+    <h1>Clock</h1>
+    <div id="container">
+      <div id="hours">1</div>
+      <span>:</span>
+      <div id="min">12</div>
+      <span>:</span>
+      <div id="sec">12</div>
+      <div id="ampm">AM</div>
+    </div>
+  </body>
+</html>
+<script>
+  let clock = function () {
+    let date = new Date();
+    let hours = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+    let half = "";
+
+    hours >= 12 ? (half = "PM") : (half = "AM");
+
+    document.querySelector("#hours").textContent = hours;
+    document.querySelector("#min").textContent = min;
+    document.querySelector("#sec").textContent = sec;
+    document.querySelector("#ampm").textContent = half;
+
+    setInterval(clock, 1000);
+  };
+  clock();
+</script>

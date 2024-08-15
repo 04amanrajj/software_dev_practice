@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      #display {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+      #control {
+        margin-top: 10px;
+      }
+
+      #control button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0 5px;
+        transition: background-color 0.3s;
+      }
+
+      #control button:hover {
+        background-color: #0056b3;
+      }
+
+      #control button:active {
+        background-color: #004494;
+      }
+
+      #control button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StopWatch</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>StopWatch</h1>
+      <div id="display">
+        <span id="hours">00</span>:
+        <span id="min">00</span>:
+        <span id="sec">00</span>
+    </div>
+      <div id="control">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="reset-btn">Reset</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let hours = document.querySelector("#hours");
+  let min = document.querySelector("#min");
+  let sec = document.querySelector("#sec");
+
+  let start = document.querySelector("#start-btn");
+  let pause = document.querySelector("#pause-btn");
+  let reset = document.querySelector("#reset-btn");
+
+  let interval;
+  let isRunning = false;
+
+  start.addEventListener("click", () => {
+    
+    if (!isRunning) {
+      interval = setInterval(() => {
+// hiding hh:mm 
+
+
+        // Main part
+        sec.textContent++;
+        // console.log(sec.textContent)
+        if (sec.textContent >= 59) {
+          sec.textContent = 0;
+          min.textContent++
+          if (min.textContent >= 59) {
+            min.textContent = 0;
+            hours.textContent++
+            if (hours.textContent > 60) {
+              (hours.textContent = 0), (min.textContent = 0), (sec.textContent = 0);
+
+              clearInterval(interval);
+            //   alert("Limit Reach");
+            }
+          }
+        }
+      }, 1000);
+      isRunning = true;
+    }
+  });
+  pause.addEventListener("click", () => {
+    clearInterval(interval);
+    isRunning = false;
+  });
+
+  reset.addEventListener("click", () => {
+    clearInterval(interval);
+    (hours.textContent = 0), (min.textContent = 0), (sec.textContent = 0);
+  });
+</script>

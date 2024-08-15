@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slideshow</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #imgs {
+        max-width: 600px;
+        max-height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #controls {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      #controls button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      #Start,
+      #Pause {
+        margin: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <button id="Pre">Previous</button>
+      <div id="imgs"></div>
+      <button id="Next">Next</button>
+    </div>
+    <div id="controls"></div>
+    <button id="Start">Start</button>
+    <button id="Pause">Pause</button>
+
+    <script>
+      let pics = [
+          "https://wallpaperaccess.com/full/2478261.jpg",
+          "https://wallpaperaccess.com/full/8453095.jpg",
+          "https://wallpaperaccess.com/full/2587476.jpg",
+          "https://wallpaperaccess.com/full/8453402.jpg",
+          "https://wallpaperaccess.com/thumb/3161660.jpg",
+          "https://wallpaperaccess.com/full/8453097.jpg",
+        ],
+        i = 0,
+        interval = false;
+
+      let imgdiv = document.querySelector("#imgs");
+
+      function updateimg() {
+        imgdiv.innerHTML = "";
+        let pic = document.createElement("img");
+        pic.setAttribute("src", pics[i]);
+        imgdiv.append(pic);
+      }
+
+      //start button
+      document.querySelector("#Start").addEventListener("click", () => {
+        if (!interval) {
+          interval = setInterval(() => {
+            i++;
+            if (i == pics.length) i = 0;
+            updateimg();
+          }, 1000);
+        }
+      });
+      // pause button
+      document.querySelector("#Pause").addEventListener("click", () => {
+        clearInterval(interval);
+        interval = true;
+      });
+      // next button
+      document.querySelector("#Next").addEventListener("click", () => {
+        clearInterval(interval);
+        i++;
+        if(i==pics.length) i=0
+        updateimg();
+      });
+      // previous button
+      document.querySelector("#Pre").addEventListener("click", () => {
+        clearInterval(interval);
+        i--;
+        if(i<0) i=pics.length-1
+        updateimg();
+      });
+
+      updateimg();
+    </script>
+  </body>
+</html>

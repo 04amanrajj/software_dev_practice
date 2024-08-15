@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Stop Watch
+    <h1></h1>
+  </body>
+</html>
+<script>
+  let count = 10;
+
+  let x = setInterval(() => {
+    count--;
+    document.querySelector("h1").textContent = count;
+    if (count == 0) {
+      clearInterval(x);
+    }
+  }, 1000);
+</script>

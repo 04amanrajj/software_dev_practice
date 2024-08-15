@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      #input {
+        margin-bottom: 20px;
+      }
+
+      #input input[type="number"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 60px;
+        margin: 0 5px;
+      }
+
+      #control {
+        margin-top: 10px;
+      }
+
+      #control button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0 5px;
+        transition: background-color 0.3s;
+      }
+
+      #control button:hover {
+        background-color: #0056b3;
+      }
+
+      #control button:active {
+        background-color: #004494;
+      }
+
+      #control button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+  </head>
+  <body>
+    <h2 id="msg"></h2>
+    <div id="container">
+      <h1>Timer</h1>
+      <div id="input">
+        <input type="number" id="hours" placeholder="Hour" />
+        <input type="number" id="min" placeholder="Min" />
+        <input type="number" id="sec" placeholder="Sec" />
+      </div>
+      <div id="control">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="reset-btn">Reset</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let hours = document.querySelector("#hours");
+  let min = document.querySelector("#min");
+  let sec = document.querySelector("#sec");
+
+  let start = document.querySelector("#start-btn");
+  let pause = document.querySelector("#pause-btn");
+  let reset = document.querySelector("#reset-btn");
+
+  let interval;
+  let isRunning = false;
+
+  start.addEventListener("click", () => {
+    if (!isRunning) {
+      interval = setInterval(() => {
+        // Main part
+        sec.value--;
+        if (sec.value <= 0) {
+          sec.value = 59;
+          min.value--;
+          if (min.value <= 0) {
+            min.value = 59;
+            hours.value--;
+            if (hours.value < 0) {
+              (hours.value = 0), (min.value = 0), (sec.value = 0);
+
+              clearInterval(interval);
+              alert("Time Out");
+            }
+          }
+        }
+      }, 1000);
+      isRunning = true;
+    }
+  });
+  pause.addEventListener("click", () => {
+    clearInterval(interval);
+    isRunning = false;
+  });
+
+  reset.addEventListener("click", () => {
+    clearInterval(interval);
+    (hours.value = 0), (min.value = 0), (sec.value = 0);
+  });
+</script>
