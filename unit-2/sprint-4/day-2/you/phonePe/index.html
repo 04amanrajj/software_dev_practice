@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhonePe</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Payment of $100 <span></span></h1>
+    <input type="number" placeholder="Enter pin" />
+    <button>Pay</button>
+  </body>
+</html>
+<script>
+  document.querySelector("button").addEventListener("click", pay);
+let body=document.querySelector("body")
+  function pay() {
+    let pin = document.querySelector("input");
+    let span = document.querySelector("span");
+    span.textContent = "is Processing";
+
+    setTimeout(() => {
+      let pro = new Promise((res, rej) => {
+        if (pin.value == "1234") res("Pass");
+        else rej("Fail");
+      });
+
+      pro
+        .then((res) => {
+          span.textContent = "is Succeeded";
+          body.style.backgroundColor="#28a745"
+          document.querySelector("h1").style.color="white"
+          
+        })
+        .catch((rej) => {
+          span.textContent = "is Failed";
+          body.style.backgroundColor="#dc3545"
+        });
+    }, 3000);
+  }
+</script>
