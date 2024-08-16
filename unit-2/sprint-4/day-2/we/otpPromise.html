@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="" id="input" />
+    <button>check otp</button>
+  </body>
+</html>
+<script>
+  let data = document.querySelector("#input");
+  data.value;
+  document.querySelector("button").addEventListener("click", () => {
+    optPromise(data.value)
+      .then((res) => alert(res))
+      .catch((rej) => alert(rej));
+  });
+
+  function optPromise(otp) {
+    return new Promise((res, rej) => {
+      if (otp == 1234) res("OTP correct");
+      else rej("OTP incorrect, check 1234");
+    });
+  }
+</script>

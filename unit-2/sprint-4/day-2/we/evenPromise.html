@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  
+  let num=12
+
+  let evenorodd=new Promise((resolve,reject)=>{
+    if(num%2==0) resolve("even")
+    else reject("Odd")
+  })
+
+  evenorodd.then((fromResolve)=>console.log(fromResolve)).catch((fromReject)=>console.log(fromReject))
+
+</script>
