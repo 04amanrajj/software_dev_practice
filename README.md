@@ -1,12 +1,11 @@
 ##Future
 
-DSA- Sorting
-Coding- HTTP,Fetch,CP platform,promise,asynchronus
-
+DSA- 
+Coding- Fetch,CP platform,fetch2
 ## current 
 
-DSA- Slding Window
-Coding- Nothing
+DSA- sorting
+Coding- promise
 
 
 ## Assignment
@@ -44,6 +43,8 @@ DSA{
     key & value pairs
     logorithms
     tc&sc
+    sliding window
+    sorting
 }
               
 
