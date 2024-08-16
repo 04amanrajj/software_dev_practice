@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccination Portal</title>
+  </head>
+  <link rel="stylesheet" href="style/navbar.css" />
+  <body>
+    <div id="navbar">
+      <h1>VaccinateYour self</h1>
+      <div>
+        <a href="register.html"><h1>Register</h1></a>
+        <a href="dashboard.html"><h1>Dashboard</h1></a>
+        <a href="vaccinated.html"><h1>Vaccinated</h1></a>
+      </div>
+    </div>
+    <div id="container">
+      <form>
+        <label for="">Unique ID</label><br />
+        <input id="id" type="number" placeholder="ID" required/><br />
+        <label for="">Enter Full Name</label><br />
+        <input id="name" type="text" placeholder="Name" required/><br />
+        <label for="">Enter your age</label><br />
+        <input id="age" type="number" placeholder="Age" required/><br />
+        <label for="">Select your work</label><br />
+        <label>
+          <input value="employee" name="status" type="radio" id="employee" required/>
+          Employee
+        </label>
+        <label>
+          <input value="student" name="status" type="radio" id="student" required/>
+          Student </label
+        ><br />
+        <label for="">Priority</label>
+        <select name="" id="Priority">
+          <option value="">Select</option>
+          <option value="p0">p0</option>
+          <option value="p1">p1</option>
+          <option value="p2">p2</option>
+          <option value="p3">p3</option></select
+        ><br />
+        <label for="">Vaccine</label>
+        <select name="" id="vaccine">
+          <option value="">Select</option>
+          <option value="Covishield">Covishield</option>
+          <option value="Covaxin">Covaxin</option>
+          <option value="Sputnik">Sputnik</option></select
+        ><br />
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
+<script src="script/index.js"></script>
