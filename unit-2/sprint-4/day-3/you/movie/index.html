@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch</title>
+  </head>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#container > div {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#container > div:hover {
+  transform: translateY(-5px);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 10px;
+  color: #333;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin: 10px;
+}
+
+input {
+  display: block;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#error {
+  color: red;
+  margin: 20px 0;
+  text-align: center;
+}
+
+  </style>
+  <body>
+    <input oninput="search()" type="text" placeholder="Search" id="search" />
+    <h1 id="error"></h1>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+    let url = "http://www.omdbapi.com/?apikey=b97c13ee&s=";
+
+    // promise with async function
+    async function getData(url) {
+      try {
+        let response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        let data = await response.json();
+        if (data.Response === "True") {
+          display(data.Search);
+          document.getElementById("error").textContent = "";
+        } else {
+          throw new Error(data.Error);
+        }
+      } catch (error) {
+        document.getElementById("error").textContent = "Error: " + error.message;
+        document.getElementById("container").innerHTML = "";
+      }
+    }
+
+    // searching function
+    function search() {
+      let searchTerm = document.querySelector("#search").value;
+      let newUrl = url + encodeURIComponent(searchTerm);
+      getData(newUrl);
+    }
+
+// displaying data(arrays of movies)
+    function display(data) {
+      const container = document.querySelector("#container");
+      container.innerHTML = "";
+
+      data.forEach((element) => {
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = element.Poster;
+
+        let title = document.createElement("h2");
+        title.textContent = element.Title;
+
+        let year = document.createElement("p");
+        year.textContent = "Year: " + element.Year;
+
+        let imdbID = document.createElement("p");
+        imdbID.textContent = "IMDB ID: " + element.imdbID;
+
+        let type = document.createElement("p");
+        type.textContent = "Type: " + element.Type;
+
+        div.append(img, title, year, imdbID, type);
+        container.append(div);
+      });
+    }
+</script>
