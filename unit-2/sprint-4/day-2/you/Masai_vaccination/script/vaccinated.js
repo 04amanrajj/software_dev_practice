@@ -4,7 +4,6 @@ function displayTable(data) {
   document.querySelector("tbody").innerHTML = "";
   data.forEach((element, i) => {
     let row = document.createElement("tr");
-    let temp = 0;
     let td1 = document.createElement("td");
     td1.textContent = element.id;
     row.append(td1);
