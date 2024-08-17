@@ -143,8 +143,8 @@ function vaccinate(element,i,temp) {
         done.push(element);
         localStorage.setItem("Vaccinated", JSON.stringify(done));
         remove(i)
-      }, 1000);
-    }, 500);
+      }, 5000);
+    }, 2000);
   }).catch((rej) => alert(rej));
 }
 // initial call

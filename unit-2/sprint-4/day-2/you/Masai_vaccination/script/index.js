@@ -15,9 +15,12 @@ function displayData(event) {
     vaccine: form.vaccine.value,
   };
   let idexist = data.some((element) => element.id == obj.id);
-
+  let ageVerify = obj.age > 40 || obj.age < 17;
   if (idexist) {
     alert("Id Not avaliable");
+  }
+  else if (ageVerify) {
+    alert("age is not in range");
   } else {
     data.push(obj);
     localStorage.setItem("UserData", JSON.stringify(data));

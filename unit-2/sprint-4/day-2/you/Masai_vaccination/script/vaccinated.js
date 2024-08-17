@@ -1,7 +1,4 @@
 let data = JSON.parse(localStorage.getItem("Vaccinated")) || [];
-function randomNumber() {
-  return Math.floor(1000 + Math.random() * 9000);
-}
 
 function displayTable(data) {
   document.querySelector("tbody").innerHTML = "";
@@ -40,4 +37,61 @@ function displayTable(data) {
   });
 }
 
+// filter
+
+// Priority
+let filter = document.getElementById("Priority");
+
+filter.addEventListener("change", () => {
+  let task = JSON.parse(localStorage.getItem("UserData"));
+
+  if (filter.value == "") displayTable(task);
+  else filterDataByPriority(filter.value, data);
+});
+
+function filterDataByPriority(priority, data) {
+  let filteredData = data.filter((ele) => {
+    return ele.priority == priority;
+  });
+  displayTable(filteredData);
+}
+
+//vaccine Filter
+let filterVac = document.getElementById("vaccine");
+
+filterVac.addEventListener("change", () => {
+  let task = JSON.parse(localStorage.getItem("UserData"));
+  if (filterVac.value == "") displayTable(task);
+  else filterDataByVac(filterVac.value, data);
+});
+
+function filterDataByVac(vaccine, data) {
+  let filteredData = data.filter((ele) => {
+    return ele.vaccine == vaccine;
+  });
+  displayTable(filteredData);
+}
+// sort by age Filter
+
+let filterAge = document.getElementById("Sage");
+filterAge.addEventListener("change", () => {
+  if (filterAge.value == "Low to High") {
+    data.sort((a, b) => a.age - b.age);
+  } else {
+    data.sort((a, b) => b.age - a.age);
+  }
+  displayTable(data);
+});
+
+// sort by id
+
+let filterID = document.getElementById("Sid");
+filterID.addEventListener("change", () => {
+  if (filterID.value == "Low to High") {
+    data.sort((a, b) => a.id - b.id);
+  } else {
+    data.sort((a, b) => b.id - a.id);
+  }
+  displayTable(data);
+});
 displayTable(data)
