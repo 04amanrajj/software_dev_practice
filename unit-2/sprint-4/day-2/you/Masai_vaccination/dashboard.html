@@ -6,6 +6,7 @@
     <title>Dashboard</title>
   </head>
   <link rel="stylesheet" href="style/navbar.css" />
+  <link rel="stylesheet" href="style/dashboard.css" />
   <body>
     <div id="navbar">
       <h1>Vaccinate Yourself</h1>
@@ -15,47 +16,54 @@
         <a href="vaccinated.html"><h1>Vaccinated</h1></a>
       </div>
     </div>
-    <div id="filter">
-      <label for="">Priority</label>
-      <select name="" id="Priority">
-        <option value="">Select</option>
-        <option value="p0">p0</option>
-        <option value="p1">p1</option>
-        <option value="p2">p2</option>
-        <option value="p3">p3</option>
-      </select>
-      <label for="">Vaccine</label>
-      <select name="" id="vaccine">
-        <option value="">Select</option>
-        <option value="Covishield">Covishield</option>
-        <option value="Covaxin">Covaxin</option>
-        <option value="Sputnik">Sputnik</option>
-      </select>
-      <label for="">Sort by age</label>
-      <select name="" id="Sage">
-        <option value="none">none</option>
-        <option value="Low to High">Low to High</option>
-        <option value="High to Low">High to Low</option>
-      </select>
-    </div>
-    <div id="container">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Designation</th>
-            <th>Priority</th>
-            <th>Vaccine</th>
-            <th>OTP</th>
-            <th>Delete</th>
-            <th>Vaccinate</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+    <div id="dash">
+      <div id="filter">
+        <label for="">Sort by ID</label>
+        <select name="" id="Sid">
+          <option value="none">none</option>
+          <option value="Low to High">Low to High</option>
+          <option value="High to Low">High to Low</option>
+        </select>
+        <label for="">Sort by age</label>
+        <select name="" id="Sage">
+          <option value="none">none</option>
+          <option value="Low to High">Low to High</option>
+          <option value="High to Low">High to Low</option>
+        </select>
+        <label for="">Priority</label>
+        <select name="" id="Priority">
+          <option value="">Select</option>
+          <option value="p0">p0</option>
+          <option value="p1">p1</option>
+          <option value="p2">p2</option>
+          <option value="p3">p3</option>
+        </select>
+        <label for="">Vaccine</label>
+        <select name="" id="vaccine">
+          <option value="">Select</option>
+          <option value="Covishield">Covishield</option>
+          <option value="Covaxin">Covaxin</option>
+          <option value="Sputnik">Sputnik</option>
+        </select>
+      </div>
+      <div id="container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Designation</th>
+              <th>Priority</th>
+              <th>Vaccine</th>
+              <th>OTP</th>
+              <th>Delete</th>
+              <th>Vaccinate</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>

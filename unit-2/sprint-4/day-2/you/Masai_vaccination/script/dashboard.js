@@ -7,7 +7,7 @@ function displayTable(data) {
   document.querySelector("tbody").innerHTML = "";
   data.forEach((element, i) => {
     let row = document.createElement("tr");
-
+    let temp = 0;
     let td1 = document.createElement("td");
     td1.textContent = element.id;
     row.append(td1);
@@ -33,13 +33,14 @@ function displayTable(data) {
     row.append(td6);
 
     let td7 = document.createElement("td");
-    td7.textContent = randomNumber();
+    td7.textContent = temp = randomNumber();
     row.append(td7);
 
     let td8 = document.createElement("td");
     td8.textContent = "Remove";
     td8.style.backgroundColor = "#dc3545";
     td8.style.color = "white";
+    td8.style.cursor = "pointer";
     td8.addEventListener("click", () => remove(i));
     row.append(td8);
 
@@ -48,6 +49,8 @@ function displayTable(data) {
     td9.textContent = "Vaccinate";
     td9.style.backgroundColor = "#28a745";
     td9.style.color = "white";
+    td9.style.cursor = "pointer";
+    td9.addEventListener("click", () => vaccinate(element, i, temp));
     row.append(td9);
 
     document.querySelector("tbody").append(row);
@@ -102,11 +105,47 @@ let filterAge = document.getElementById("Sage");
 filterAge.addEventListener("change", () => {
   if (filterAge.value == "Low to High") {
     data.sort((a, b) => a.age - b.age);
-  } else  {
+  } else {
     data.sort((a, b) => b.age - a.age);
   }
-  displayTable(data)
+  displayTable(data);
 });
 
+// sort by id
+
+let filterID = document.getElementById("Sid");
+filterID.addEventListener("change", () => {
+  if (filterID.value == "Low to High") {
+    data.sort((a, b) => a.id - b.id);
+  } else {
+    data.sort((a, b) => b.id - a.id);
+  }
+  displayTable(data);
+});
+
+// vaccinated button (Promise)
+function vaccinate(element,i,temp) {
+  let person = prompt("Enter OTP");
+  let Pakka = new Promise((res, rej) => {
+    if (person == temp) {
+      res(element.name + " Added to Queue");
+    } else rej("OTP Incorrect");
+  });
+
+  Pakka.then((res) => {
+    alert(res);
+    setTimeout(() => {
+      alert("Vaccinating " + element.vaccine);
+      setTimeout(() => {
+        alert(element.name + " Vaccinated");
+        let done = JSON.parse(localStorage.getItem("Vaccinated")) || [];
+        element.otp=temp
+        done.push(element);
+        localStorage.setItem("Vaccinated", JSON.stringify(done));
+        remove(i)
+      }, 1000);
+    }, 500);
+  }).catch((rej) => alert(rej));
+}
 // initial call
 displayTable(data);

@@ -7,6 +7,8 @@ body {
   color: white;
   justify-content: space-between;
   background-color: black;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 #navbar>h1{
   margin-left: 10%;
@@ -14,10 +16,14 @@ body {
 }
 #navbar a {
   color: white;
+  transition: color 0.3s
 }
 #navbar > div {
   display: flex;
   width:30%;
   margin-right: 10%;
   justify-content: space-around;
+}
+#navbar div a:hover {
+  color: #ffdd57;
 }
