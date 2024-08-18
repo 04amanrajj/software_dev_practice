@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+
+      #container {
+        width: 80%;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+        width: 20%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      #home-button {
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #home-button a {
+        color: white;
+        text-decoration: none;
+      }
+
+      #home-button:hover {
+        background-color: #0056b3;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #f9f9f9;
+      }
+
+      h1 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      img{
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <button id="home-button"><a href="product.html">Home</a></button>
+      <input oninput="search()" type="text" placeholder="Search" id="product" />
+      <h1>Your Total Bill: <span id="bill"></span></h1>
+      <h1>Total items: <span id="items"></span></h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+            <th>Add</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Content will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let total = 0;
+      let items = 0;
+
+      function displayTable(cart) {
+        total = 0;
+        items = 0;
+        document.querySelector("tbody").innerHTML = "";
+
+        cart.forEach((element, i) => {
+          let row = document.createElement("tr");
+
+          let img = document.createElement("img");
+          img.setAttribute("src", element.image);
+
+          let td1 = document.createElement("td");
+          td1.append(img);
+          row.append(td1);
+
+          let td2 = document.createElement("td");
+          td2.textContent = element.name;
+          td2.style.fontSize = "smaller";
+          row.append(td2);
+
+          let td3 = document.createElement("td");
+          td3.textContent = element.price;
+          row.append(td3);
+
+          let td4 = document.createElement("td");
+          td4.textContent = element.quantity || 1;
+          row.append(td4);
+
+          let td5 = document.createElement("td");
+          td5.textContent = "+";
+          td5.style.cursor = "pointer";
+          td5.addEventListener("click", function () {
+            increaseQuantity(i);
+          });
+          row.append(td5);
+
+          let td6 = document.createElement("td");
+          td6.textContent = "-";
+          td6.style.cursor = "pointer";
+          td6.addEventListener("click", function () {
+            decreaseQuantity(i);
+          });
+          row.append(td6);
+
+          let td7 = document.createElement("td");
+          td7.textContent = "Remove";
+          td7.style.color = "white";
+          td7.style.backgroundColor = "darkred";
+          td7.style.cursor = "pointer";
+          td7.addEventListener("click", function () {
+            removeFun(i);
+          });
+          row.append(td7);
+
+          document.querySelector("tbody").append(row);
+
+          // total price
+          let quantity = element.quantity || 1;
+          total += element.price * quantity;
+
+          // total items
+          items += quantity;
+        });
+
+        // update bill and items
+        bill(total, items);
+      }
+
+      function bill(total, items, input) {
+        if (input === "aman30") {
+          total *= 0.7;
+          alert("Discount applied");
+        }
+        document.getElementById("bill").textContent = "$" + total;
+        document.getElementById("items").textContent = items;
+      }
+
+      function increaseQuantity(i) {
+        cart[i].quantity += 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayTable(cart);
+      }
+
+      function decreaseQuantity(i) {
+        if (cart[i].quantity > 1) {
+          cart[i].quantity--;
+          localStorage.setItem("cart", JSON.stringify(cart));
+          displayTable(cart);
+        } else {
+          removeFun(i);
+        }
+      }
+
+      function removeFun(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayTable(cart);
+      }
+
+      displayTable(cart);
+    </script>
+  </body>
+</html>
