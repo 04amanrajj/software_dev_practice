@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+    #container {
+      display: flex;
+    }
+    #input {
+      margin: 20px;
+      text-align: center;
+    }
+
+    #input input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 300px;
+      margin-right: 10px;
+    }
+
+    #input button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    #input button:hover {
+      background-color: #0056b3;
+    }
+
+    #weatherinfo {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .mapouter {
+      position: relative;
+      text-align: center;
+      height: 500px;
+      width: 600px;
+      margin: 20px;
+    }
+
+    .gmap_canvas {
+      overflow: hidden;
+      background: none !important;
+      height: 100%;
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+  <body>
+    <div id="input">
+      <input
+        type="text"
+        name="place"
+        id="place"
+        placeholder="Search your city"
+      />
+      <button onclick="search()">Search</button>
+    </div>
+    <div id="container">
+      <div id="weatherinfo"></div>
+
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            width="600"
+            height="500"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?&t=&z=13&ie=UTF8&iwloc=&output=embed&q="
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe>
+          <a href="https://embedgooglemap.net/124/"></a><br />
+          <style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+              height: 500px;
+              width: 600px;
+            }
+          </style>
+          <a href="https://www.embedgooglemap.net"></a>
+          <style>
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              height: 500px;
+              width: 600px;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let url = "",
+    weather = [];
+
+  function search() {
+    let search = document.querySelector("#place").value.trim();
+    document.querySelector("iframe").src = place;
+
+    let mapurl =
+      "https://maps.google.com/maps?&t=&z=13&ie=UTF8&iwloc=&output=embed&q=" +
+      encodeURIComponent(search);
+    document.querySelector("iframe").src = mapurl;
+
+    url =
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      search +
+      "&appid=f6b71d35bd7689b9f578e4465575a801";
+    getData(url);
+  }
+
+  async function getData(url) {
+    try {
+      let res = await fetch(url);
+      let data = await res.json();
+      weather = [data];
+      console.log(weather);
+      displayData(weather);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function displayData(weather) {
+    document.querySelector("#weatherinfo").innerHTML = "";
+    weather.forEach((element) => {
+      let location = document.createElement("h1");
+      location.textContent = element.name;
+
+      let temp = document.createElement("h3");
+      temp.textContent = Math.floor(element.main.temp - 273.15) + "°C";
+
+      let temp2 = document.createElement("p");
+      temp2.textContent =
+        "Feels like " +
+        Math.floor(element.main.feels_like - 273.15) +
+        "°C. " +
+        element.weather[0].description +
+        ", " +
+        element.weather[0].main;
+
+      let wind = document.createElement("p");
+      wind.textContent = element.wind.speed + "m/s";
+
+      let extra = document.createElement("p");
+      extra.textContent = "Humidity: " + element.main.humidity;
+
+      let = extra2 = document.createElement("p");
+      extra.textContent = "Visibility:" + element.visibility / 1000 + "km";
+
+      document
+        .querySelector("#weatherinfo")
+        .append(location, temp, temp2, wind, extra, extra2);
+    });
+  }
+</script>
