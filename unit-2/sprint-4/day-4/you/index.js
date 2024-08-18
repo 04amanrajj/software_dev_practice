@@ -1,5 +1,4 @@
 let url = "",
-  cordinates = "",
   weather = [];
 
 function search() {
@@ -15,23 +14,14 @@ function search() {
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     search +
     "&appid=f6b71d35bd7689b9f578e4465575a801";
-
-  cordinates =
-    "http://api.openweathermap.org/geo/1.0/direct?appid=f6b71d35bd7689b9f578e4465575a801&q=" +
-    encodeURIComponent(search);
-  // console.log(url);
-  getData(url,cordinates);
+  getData(url);
 }
 
-async function getData(url, cordinates) {
+async function getData(url) {
   try {
     let res = await fetch(url);
     let data = await res.json();
-
-    let res2 = await fetch(cordinates);
-let data2=await res2.json()
-let obj={...data, ...data2}
-    weather = [obj];
+    weather = [data];
     console.log(weather);
     displayData(weather);
   } catch (error) {
@@ -63,10 +53,9 @@ function displayData(weather) {
     let extra = document.createElement("p");
     extra.textContent = "Humidity: " + element.main.humidity;
 
-    let extra2 = document.createElement("p");
+    let = extra2 = document.createElement("p");
     extra.textContent = "Visibility:" + element.visibility / 1000 + "km";
 
-    console.log(element)
     document
       .querySelector("#weatherinfo")
       .append(location, temp, temp2, wind, extra, extra2);
