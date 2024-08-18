@@ -2,19 +2,20 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #f4f4f4;
+  flex-direction: column;
 }
+
 #container {
   display: flex;
   padding: 10px;
-  /* background-color: #007bff; */
   border: 1px #ccc;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 #input {
   margin: 20px;
   text-align: center;
@@ -75,10 +76,8 @@ body {
   height: 500px;
   width: 600px;
   margin: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 
 .gmap_canvas {
   overflow: hidden;
@@ -91,4 +90,5 @@ iframe {
   width: 100%;
   height: 100%;
   border: none;
+  border-radius: 10px;
 }
