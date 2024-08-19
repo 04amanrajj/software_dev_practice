@@ -4,25 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>resize Window </title>
+    <title>resize Window</title>
   </head>
   <body>
-      <h1>resize Window to get random backgroundColor color</h1>
-      <h2  id="colorcode"> </h2>
-</body>
+    <h1>resize Window to get random backgroundColor color</h1>
+    <h2 id="colorcode"></h2>
+  </body>
 </html>
 
-
 <script>
-  function reportWindow(){
-   let randomColor = Math.floor(Math.random()*16777215).toString(16);
-   document.body.style.backgroundColor = '#'+randomColor;
-//    document.getElementById('colorcode').innerText = "color: #"+randomColor
-  };
+  function reportWindow() {
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.backgroundColor = "#" + randomColor;
+    //    document.getElementById('colorcode').innerText = "color: #"+randomColor
+  }
   window.onresize = reportWindow;
 </script>
-
-
 
 <!-- 
 // filter
@@ -45,3 +42,16 @@ function filterDataByPriority(priority , data){
   })
   displayData(filteredData)
 } -->
+
+<script>
+  let url = "https://66c2671ef83fffcb587bda30.mockapi.io/tech";
+  geturl(url);
+  async function geturl(url) {
+    let res = await fetch(url);
+    let data = await res.json();
+
+    console.log(data);
+  }
+
+
+</script>
