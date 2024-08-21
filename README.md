@@ -1,12 +1,11 @@
 ##Future
 
-DSA- 
-Coding- Fetch,CP platform,fetch2
+DSA- quires
+Coding- 
 ## current 
 
-DSA- sorting
-Coding- promise
-
+DSA- stacks
+Coding- 
 
 ## Assignment
 
