@@ -13,5 +13,4 @@ for (let i = 0; i < arr.length; i++) {
 
   stack.push(arr[i]);
 }
-
 console.log(ans);
