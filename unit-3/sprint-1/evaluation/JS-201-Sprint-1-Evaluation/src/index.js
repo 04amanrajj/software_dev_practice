@@ -14,5 +14,10 @@ function studentData(firstName, lastName, age, marks, a, b, c) {
   };
   return obj;
 }
-export {studentData}
+
+let data = studentData("Will", "Smith", 54, [48, 49, 50], "A", "B", "C");
+console.log(data);
+console.log(data.getInfo());
+console.log(data.getResult());
+// export {studentData}
 
