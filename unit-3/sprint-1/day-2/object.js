@@ -35,10 +35,12 @@ function destructureMe() {
   };
 
   // just modify the line below
-  let { username } = user
+  let { name:username,favSubjects:[sub1],education:{degree:{name:degree}}} = user
 
   return {
-    username
+    username,
+    sub1,
+    degree
     
   };
 }
