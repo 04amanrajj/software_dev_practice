@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function a() {}
+
+  a.prototype.name = "Aman";
+
+  obj = {
+    age: 20,
+  };
+  Object.setPrototypeOf(obj, a.prototype);
+
+  //  ---------------------------------------------------------------------------
+
+  function human() {
+    this.name = "Will Smith";
+    this.age = 54;
+  }
+
+  function Actor(movieName) {
+    movie = human.call(this);
+  }
+
+  let a1 = new Actor("Aladdin");
+  //   console.log(a1.name);
+  //   console.log(a1.age);
+
+  // ------------------------------------------------------------------------------
+
+  //   Constructor Funtion
+  function userCreator(name) {
+    this.name = name;
+    // this.sayName=function(){console.log("Hi ",name)}
+  }
+
+  userCreator.prototype.sayName = function () {
+    console.log("Hi ", this.name);
+  };
+
+  //   let user1 = new userCreator("AmanRaj");
+
+  // ES6 Classes
+class person{
+  constructor(name){
+    this.name=name
+  }
+  sayhi(){console.log("Hi",this.name)}
+}
+
+class teacher extends person{
+  constructor(name,subject){
+    super(name)
+    this.subject=subject
+  }
+  say(){console.log(this.name,"teaches",this.subject)}
+}
+
+let p=new teacher("AmanRajj","JS")
+</script>
