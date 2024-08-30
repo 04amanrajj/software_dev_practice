@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function person() {
+  this.name = "AMan";
+}
+
+function actor(){
+  let obj={}
+  obj.movieName="Hero"
+  person.call(obj)
+  return obj;
+}
+let will=actor();
+console.log(will.name);
+console.log(will.movieName);
+
+</script>
