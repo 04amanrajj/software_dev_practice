@@ -1,10 +1,10 @@
 ##Future
 
-DSA-circular queue
+DSA-
 Coding- 
 ## current 
 
-DSA- queue
+DSA- circular queue
 Coding- 
 
 ## Assignment
