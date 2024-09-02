@@ -4,7 +4,7 @@ DSA-
 Coding- 
 ## current 
 
-DSA- circular queue
+DSA- Linked List 
 Coding- 
 
 ## Assignment
