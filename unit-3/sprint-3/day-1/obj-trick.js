@@ -1,5 +1,17 @@
-let obj = { x: 1, y: 2 };
+let adhar = {
+    name:'Aman Raj',
+    addhaar: '1212121121212'
+}
+adhar.name = "aman"
+Object.freeze(adhar)
+adhar.addhaar = '111111111111111'
 
+console.log(adhar);
+
+
+
+return
+let obj = { x: 1, y: 2 };
 console.log(Object.keys(obj)); //[ 'x', 'y' ]
 console.log(Object.values(obj)); //[ 1, 2 ]
 console.log(Object.entries(obj)); //[ [ 'x', 1 ], [ 'y', 2 ] ]
