@@ -1,5 +1,5 @@
 let arr = [4, 1, 3, 2, 5];
-let stack = []
+// {let stack = []
 let ans = []
 
 for (let i = 0; i < arr.length; i++) {
@@ -14,3 +14,9 @@ for (let i = 0; i < arr.length; i++) {
   stack.push(arr[i]);
 }
 console.log(ans);
+// }
+
+// console.log(arr.includes(5)); //O(n)
+let xy = new Set(arr)
+
+console.log(xy.has(51));
