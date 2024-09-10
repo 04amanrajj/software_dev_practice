@@ -4,10 +4,10 @@ DSA-
 Coding- 
 ## current 
 
-DSA- Linked List 
-Coding- LLD
+DSA- Done
+Coding- 
 
 ## Assignment
 
-DSA- Linked List
+DSA- Done
 CODING-
