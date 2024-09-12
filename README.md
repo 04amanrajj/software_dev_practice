@@ -1,11 +1,11 @@
 ##Future
 
 DSA-Done
-Coding- 
+Coding- JWT auth
 ## current 
 
 DSA- Done
-Coding- 
+Coding- fetch methods 
 
 ## Assignment
 
