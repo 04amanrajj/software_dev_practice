@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+}
+/* Default button styles */
+.pbtn {
+  background-color: #3280f5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style for active/selected button */
+.pagebtn {
+  border: 2px solid #fff; /* White border for active state */
+  background-color: #3280f5; /* Slightly darker background for active state */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional shadow for active button */
+}
+
+/* Button hover effect */
+.pbtn:hover {
+  background-color: #0f4ca8;
+}
