@@ -1,0 +1,53 @@
+### Get all users
+GET http://localhost:9090/users
+
+### new User(i types by self ,error Header name must be a valid HTTP token ["{"])
+POST http://localhost:9090/user/register
+Content-Type: application/json
+
+{
+  "username": "amanraj",
+  "firstname": "he",
+  "lastname": "man",
+  "email": "heman@mail.com",
+  "password": "amanraj",
+  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg",
+  "userLevel": 4
+}
+
+###
+#"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtYW5yYWoiLCJwYXNzd29yZCI6IiQyYiQxMCRpdnhEamNkNnpFSGwwdk4va1loNDBlN29idHB1YlVyTnQwcklCQzY2WXZ3dFE1c2hlaEIzZSIsImVtYWlsIjoiaGVtYW5AbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJoZSIsImxhc3RuYW1lIjoibWFuIiwiYXZhdGFyIjoiaHR0cHM6Ly9jbG91ZGZsYXJlLWlwZnMuY29tL2lwZnMvUW1kM1c1RHVoZ0hpckxIR1ZpeGk2Vjc2TGhDa1pVejZwbkZ0NUFKQml5dkh5ZS9hdmF0YXIvNzYyLmpwZyIsImNyZWF0ZWRBdCI6MTcyNjMxNjcxNjgxMywiaWQiOjY2LCJpYXQiOjE3MjYzMTgwMTcsImV4cCI6MTcyNjMyODgxN30.IY1IydjAmfY-6jaR-E_wN6VpUEZ9gI0CSSlfvdEmCOI"
+POST http://localhost:9090/user/login
+Content-Type: application/json
+
+{
+  "username": "amanraj",
+  "password": "amanraj"
+}
+
+### acces using token
+GET http://localhost:9090/todos/49
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtYW5yYWoiLCJwYXNzd29yZCI6IiQyYiQxMCRpdnhEamNkNnpFSGwwdk4va1loNDBlN29idHB1YlVyTnQwcklCQzY2WXZ3dFE1c2hlaEIzZSIsImVtYWlsIjoiaGVtYW5AbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJoZSIsImxhc3RuYW1lIjoibWFuIiwiYXZhdGFyIjoiaHR0cHM6Ly9jbG91ZGZsYXJlLWlwZnMuY29tL2lwZnMvUW1kM1c1RHVoZ0hpckxIR1ZpeGk2Vjc2TGhDa1pVejZwbkZ0NUFKQml5dkh5ZS9hdmF0YXIvNzYyLmpwZyIsImNyZWF0ZWRBdCI6MTcyNjMxNjcxNjgxMywiaWQiOjY2LCJpYXQiOjE3MjYzMTgwMTcsImV4cCI6MTcyNjMyODgxN30.IY1IydjAmfY-6jaR-E_wN6VpUEZ9gI0CSSlfvdEmCOI
+
+### delete using token
+DELETE http://localhost:9090/todos/48
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtYW5yYWoiLCJwYXNzd29yZCI6IiQyYiQxMCRpdnhEamNkNnpFSGwwdk4va1loNDBlN29idHB1YlVyTnQwcklCQzY2WXZ3dFE1c2hlaEIzZSIsImVtYWlsIjoiaGVtYW5AbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJoZSIsImxhc3RuYW1lIjoibWFuIiwiYXZhdGFyIjoiaHR0cHM6Ly9jbG91ZGZsYXJlLWlwZnMuY29tL2lwZnMvUW1kM1c1RHVoZ0hpckxIR1ZpeGk2Vjc2TGhDa1pVejZwbkZ0NUFKQml5dkh5ZS9hdmF0YXIvNzYyLmpwZyIsImNyZWF0ZWRBdCI6MTcyNjMxNjcxNjgxMywiaWQiOjY2LCJpYXQiOjE3MjYzMTgwMTcsImV4cCI6MTcyNjMyODgxN30.IY1IydjAmfY-6jaR-E_wN6VpUEZ9gI0CSSlfvdEmCOI
+
+### put will delete all and replace with given value
+PUT http://localhost:9090/todos/49
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtYW5yYWoiLCJwYXNzd29yZCI6IiQyYiQxMCRpdnhEamNkNnpFSGwwdk4va1loNDBlN29idHB1YlVyTnQwcklCQzY2WXZ3dFE1c2hlaEIzZSIsImVtYWlsIjoiaGVtYW5AbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJoZSIsImxhc3RuYW1lIjoibWFuIiwiYXZhdGFyIjoiaHR0cHM6Ly9jbG91ZGZsYXJlLWlwZnMuY29tL2lwZnMvUW1kM1c1RHVoZ0hpckxIR1ZpeGk2Vjc2TGhDa1pVejZwbkZ0NUFKQml5dkh5ZS9hdmF0YXIvNzYyLmpwZyIsImNyZWF0ZWRBdCI6MTcyNjMxNjcxNjgxMywiaWQiOjY2LCJpYXQiOjE3MjYzMTgwMTcsImV4cCI6MTcyNjMyODgxN30.IY1IydjAmfY-6jaR-E_wN6VpUEZ9gI0CSSlfvdEmCOI
+
+{
+  "completed":true
+}
+
+### patch will update the value given
+PATCH  http://localhost:9090/todos/39
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtYW5yYWoiLCJwYXNzd29yZCI6IiQyYiQxMCRpdnhEamNkNnpFSGwwdk4va1loNDBlN29idHB1YlVyTnQwcklCQzY2WXZ3dFE1c2hlaEIzZSIsImVtYWlsIjoiaGVtYW5AbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJoZSIsImxhc3RuYW1lIjoibWFuIiwiYXZhdGFyIjoiaHR0cHM6Ly9jbG91ZGZsYXJlLWlwZnMuY29tL2lwZnMvUW1kM1c1RHVoZ0hpckxIR1ZpeGk2Vjc2TGhDa1pVejZwbkZ0NUFKQml5dkh5ZS9hdmF0YXIvNzYyLmpwZyIsImNyZWF0ZWRBdCI6MTcyNjMxNjcxNjgxMywiaWQiOjY2LCJpYXQiOjE3MjYzMTgwMTcsImV4cCI6MTcyNjMyODgxN30.IY1IydjAmfY-6jaR-E_wN6VpUEZ9gI0CSSlfvdEmCOI
+
+{
+  "completed":true 
+}
