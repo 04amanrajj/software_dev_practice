@@ -1016,16 +1016,6 @@
       "avatar": "",
       "createdAt": 1726323179653,
       "id": 69
-    },
-    {
-      "username": "aman",
-      "password": "$2b$10$6aRmFAauALg.mPg4b9JQgeQ2wcBXTkKbcDWmPfhdKVxc5b/DaeUTe",
-      "email": "amanprajapat322@gmail.com",
-      "firstname": "Aman",
-      "lastname": "Raj",
-      "avatar": "",
-      "createdAt": 1726331782843,
-      "id": 70
     }
   ],
   "posts": [

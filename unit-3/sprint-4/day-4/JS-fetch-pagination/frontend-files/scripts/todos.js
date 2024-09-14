@@ -1,7 +1,7 @@
 const baseURL = "http://127.0.0.1:9090";
 const recipeIngredientURL = "http://127.0.0.1:9090/recipeIngredients";
 const employeeURL = "http://localhost:9090/employees";
-const todosURL = "http://localhost:9090/todos";
+const todosURL = "http://localhost:9090/todos?_limit=5";
 const userRegisterUrl = "http://localhost:9090/user/register";
 const userLoginUrl = "http://localhost:9090/user/login";
 
@@ -30,6 +30,9 @@ let loginUserUsername = document.getElementById("login-user-username");
 let loginUserPassword = document.getElementById("login-user-password");
 let loginUserButton = document.getElementById("login-user");
 
+let fetchTodoButton = document.getElementById("fetch-data");
+let auth = localStorage.getItem("token") || null;
+
 window.addEventListener("load", () => {});
 
 registerUserButton.addEventListener("click", async () => {
@@ -53,7 +56,6 @@ registerUserButton.addEventListener("click", async () => {
     });
     let data = await response.json();
     alert(JSON.stringify(data));
-    displayData(data);
   } catch (error) {
     console.log(error);
   }
@@ -64,7 +66,7 @@ loginUserButton.addEventListener("click", async () => {
     username: loginUserUsername.value,
     password: loginUserPassword.value,
   };
-  console.log(obj)
+  console.log(obj);
   try {
     let response = await fetch(userLoginUrl, {
       method: "POST",
@@ -73,9 +75,27 @@ loginUserButton.addEventListener("click", async () => {
       },
       body: JSON.stringify(obj),
     });
-    let data=await response.json()
-    let auth =localStorage.setItem("token",data.accessToken)
+    let data = await response.json();
+    auth = localStorage.setItem("token", data.accessToken);
   } catch (error) {
-    alert("You don't look familiar")
+    alert("You don't look familiar");
   }
+});
+
+fetchTodoButton.addEventListener("click", async () => {
+  let response = await fetch(todosURL, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${auth}`,
+    },
+  });
+  // console.log(response);
+  let data = await response.json();
+
+  mainSection.innerHTML = `
+    <pre>
+      ${JSON.stringify(data, null, 2)}
+    </pre>
+  `;
 });
