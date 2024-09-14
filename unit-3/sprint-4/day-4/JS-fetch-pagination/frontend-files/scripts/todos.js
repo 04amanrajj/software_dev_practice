@@ -31,7 +31,7 @@ let loginUserPassword = document.getElementById("login-user-password");
 let loginUserButton = document.getElementById("login-user");
 
 let fetchTodoButton = document.getElementById("fetch-data");
-let auth = localStorage.getItem("token") || null;
+let auth = null;
 
 window.addEventListener("load", () => {});
 
@@ -76,26 +76,99 @@ loginUserButton.addEventListener("click", async () => {
       body: JSON.stringify(obj),
     });
     let data = await response.json();
-    auth = localStorage.setItem("token", data.accessToken);
+    auth = data.accessToken;
+    alert("HEllo User")
   } catch (error) {
     alert("You don't look familiar");
   }
 });
 
-fetchTodoButton.addEventListener("click", async () => {
-  let response = await fetch(todosURL, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${auth}`,
-    },
-  });
-  // console.log(response);
-  let data = await response.json();
+fetchTodoButton.addEventListener("click", () => {
+  makeurl(todosURL);
+});
 
+async function makeurl(todosURL) {
+  try {
+    let data = await fetch(todosURL, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${auth}`,
+      },
+    });
+    // console.log(response);
+    let response = await Promise.all([
+      data.json(),
+      data.headers.get("X-Total-Count"),
+    ]);
+    totalItems = response[1];
+    totalPage = Math.ceil(totalItems / 10);
+    pageWork(totalPage);
+    display(response[0]);
+  } catch (error) {
+    alert("login First",JSON.stringify(error))
+  }
+}
+
+// paginationWrapper
+
+function display(data) {
   mainSection.innerHTML = `
     <pre>
       ${JSON.stringify(data, null, 2)}
     </pre>
   `;
-});
+}
+
+renderButton(1, 5);
+
+function renderButton(start, end) {
+  let button = buttons(start, end);
+  paginationWrapper.innerHTML = button;
+}
+
+//button Maker
+function buttons(start, end) {
+  let button = "";
+  for (let i = start; i <= end; i++) {
+    button += `<button class="pageButton" data-id=${i}>${i}</button>`;
+  }
+  return button;
+}
+
+// change pages
+function setbuttonAction() {
+  let pagebtn = document.querySelectorAll(".pageButton");
+  pagebtn.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      console.log(e.target.dataset.id);
+      makeurl(`${todosURL}&_page=${e.target.dataset.id}`);
+    });
+  });
+}
+
+let currentPage = 1;
+
+function pageWork(totalPage) {
+  renderButton(currentPage, Math.min(currentPage + 4, totalPage));
+  setbuttonAction();
+
+  //   last & next
+  let next = document.querySelector(".next");
+  next.addEventListener("click", () => {
+    if (currentPage + 5 <= totalPage) {
+      currentPage += 2;
+      renderButton(currentPage, Math.min(currentPage + 4, totalPage));
+      setbuttonAction();
+    }
+  });
+
+  let last = document.querySelector(".last");
+  last.addEventListener("click", () => {
+    if (currentPage - 5 >= 1) {
+      currentPage -= 5;
+      renderButton(currentPage, Math.min(currentPage + 4, totalPage));
+      setbuttonAction();
+    }
+  });
+}

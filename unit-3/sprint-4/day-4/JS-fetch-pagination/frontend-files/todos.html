@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/skeleton.css">
+    <link
+    href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+    rel="stylesheet"
+    type="text/css"
+    />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/skeleton.css" />
     <link rel="stylesheet" href="./styles/todos.css" />
     <title>Todo App</title>
   </head>
@@ -18,41 +22,111 @@
           <p>Cute little app</p>
         </div>
       </div>
-
+      
       <div class="row">
         <div class="columns four sidebar-one" id="sidebar-one">
-
+          <button id="fetch-data" class="u-full-width button-primary">
+            Fetch Todo List
+          </button>
           <h4>Register User</h4>
-          <input type="text" id="register-user-username" class="u-full-width" placeholder="username" />
-          <input type="text" id="register-user-firstname" class="u-full-width" placeholder="firstname" />
-          <input type="text" id="register-user-lastname" class="u-full-width" placeholder="lastname" />
-          <input type="text" id="register-user-email" class="u-full-width" placeholder="email" />
-          <input type="password" id="register-user-password" class="u-full-width" placeholder="password" />
-          <input type="text" id="register-user-avatar" class="u-full-width" placeholder="avatar image url" value="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg"/>
-          <input type="number" id="register-user-level" class="u-full-width" placeholder="Department Number" />
-          <button id="register-user" class="u-full-width button button-primary">Register User</button>
-          <hr>
+          <input
+          type="text"
+          id="register-user-username"
+          class="u-full-width"
+          placeholder="username"
+          />
+          <input
+            type="text"
+            id="register-user-firstname"
+            class="u-full-width"
+            placeholder="firstname"
+          />
+          <input
+            type="text"
+            id="register-user-lastname"
+            class="u-full-width"
+            placeholder="lastname"
+          />
+          <input
+            type="text"
+            id="register-user-email"
+            class="u-full-width"
+            placeholder="email"
+          />
+          <input
+            type="password"
+            id="register-user-password"
+            class="u-full-width"
+            placeholder="password"
+          />
+          <input
+            type="text"
+            id="register-user-avatar"
+            class="u-full-width"
+            placeholder="avatar image url"
+            value="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg"
+          />
+          <input
+            type="number"
+            id="register-user-level"
+            class="u-full-width"
+            placeholder="Department Number"
+          />
+          <button id="register-user" class="u-full-width button button-primary">
+            Register User
+          </button>
+          <hr />
 
           <h4>login User</h4>
-          <input type="text" id="login-user-username" class="u-full-width" placeholder="username" />
-          <input type="password" id="login-user-password" class="u-full-width" placeholder="password" />
-          <button id="login-user" class="u-full-width button button-primary">login User</button>
-          <button id="fetch-data" class="u-full-width button-primary">Fetch Todo List</button>
-          <hr>
-
+          <input
+            type="text"
+            id="login-user-username"
+            class="u-full-width"
+            placeholder="username"
+          />
+          <input
+            type="password"
+            id="login-user-password"
+            class="u-full-width"
+            placeholder="password"
+          />
+          <button id="login-user" class="u-full-width button button-primary">
+            login User
+          </button>
+          <hr />
 
           <h4>Patch User Department</h4>
-          <input type="number" id="patch-user-id" class="u-full-width" placeholder="user id" />
-          <input type="text" id="patch-user-username" class="u-full-width" placeholder="username"/>
-          <input type="number" id="patch-user-level" class="u-full-width" placeholder="Department Number" />
-          <button id="patch-user" class="u-full-width button button-primary">Register User</button>
-          <hr>
-
+          <input
+            type="number"
+            id="patch-user-id"
+            class="u-full-width"
+            placeholder="user id"
+          />
+          <input
+            type="text"
+            id="patch-user-username"
+            class="u-full-width"
+            placeholder="username"
+          />
+          <input
+            type="number"
+            id="patch-user-level"
+            class="u-full-width"
+            placeholder="Department Number"
+          />
+          <button id="patch-user" class="u-full-width button button-primary">
+            Register User
+          </button>
+          <hr />
         </div>
-          <div class="columns eight main">
-            <div class="data-list-wrapper" id="data-list-wrapper"></div>
-            <div class="pagination-wrapper" id="pagination-wrapper">Pagination</div>
+        <div class="columns eight main">
+          <div class="pageButtons">
+            <button class="last">Previous</button>
+            <div id="pagination-wrapper"></div>
+            <button class="next">Next</button>
           </div>
+          <div class="data-list-wrapper" id="data-list-wrapper"></div>
+        </div>
       </div>
     </div>
 
