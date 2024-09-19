@@ -36,7 +36,7 @@
 }
 
 {
-  console.log(x); //cant access because its in not globel mermory
+  //console.log(x); cant access because its in not globel mermory
   console.log(y); //access but its undefined
   let x;
   var y;
@@ -49,3 +49,14 @@ var am = 10;
   console.log(am); //20
 }
 console.log(am); //20
+
+// closure
+function c() {
+  let x = 99;
+  return function inc() {
+    console.log(x);
+  };
+}
+let closure = c();
+console.log(closure);
+closure()
