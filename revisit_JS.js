@@ -41,3 +41,11 @@
   let x;
   var y;
 }
+
+// shadowing variable
+var am = 10;
+{
+  var am = 20; //update the am
+  console.log(am); //20
+}
+console.log(am); //20
