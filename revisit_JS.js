@@ -35,3 +35,9 @@
   ab(); //this.a===window.a
 }
 
+{
+  console.log(x); //cant access because its in not globel mermory
+  console.log(y); //access but its undefined
+  let x;
+  var y;
+}
