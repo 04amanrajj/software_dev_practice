@@ -27,5 +27,11 @@
     console.log(x);
   }
 }
-
+{
+  function ab() {
+    console.log(a);
+  }
+  let a = 10;
+  ab(); //this.a===window.a
+}
 
