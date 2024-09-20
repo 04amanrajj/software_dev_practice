@@ -51,12 +51,15 @@ var am = 10;
 console.log(am); //20
 
 // closure
-function c() {
-  let x = 99;
-  return function inc() {
-    console.log(x);
-  };
+{
+  function c() {
+    let x = 99;
+    return function inc() {
+      console.log(x);
+    };
+  }
+  let closure = c();
+  console.log(closure);
+  closure();
 }
-let closure = c();
-console.log(closure);
-closure()
+
