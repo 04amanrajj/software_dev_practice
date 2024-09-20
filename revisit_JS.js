@@ -63,3 +63,14 @@ console.log(am); //20
   closure();
 }
 
+// setTimeout with closure
+{
+  for (let i = 0; i < 5; i++) {
+    function close(x) {
+      setTimeout(() => {
+        console.log(x);
+      }, x * 1000);
+    }
+    close(i);
+  }
+}
