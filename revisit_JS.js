@@ -74,3 +74,30 @@ console.log(am); //20
     close(i);
   }
 }
+
+// function statement or declareation
+function name() {
+  console.log("function statement");
+}
+// function expression
+let myFun = function () {
+  console.log("function expression");
+};
+
+//annonymous function
+// function () {
+//   console.log("annonymous expression");
+// };
+
+let newFun = function nameFun() {
+  console.log("function expression", nameFun);
+  //can use function inside this function
+};
+
+// aruguments vs perameters?
+// calling myFun(arug1,arug2) are arguments
+// reciving arguments called perameters like
+// myFun(peram1,peram2)
+
+// first class function - ability to use like values
+// passing functions as arguments or returning functions as value
