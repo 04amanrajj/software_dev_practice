@@ -31,15 +31,19 @@ function area(radius, logic) {
 
 // -------------------Filter---------------------------------------------
 
-let arr = [4, 1, 2, 4, 9, 8];
+{
+  let arr = [4, 1, 2, 4, 9, 8];
 
-let output = arr.filter((e) => e > 4);
-// console.log(output);
+  let output = arr.filter((e) => e > 4);
+  // console.log(output);
+}
 
 // -------------------Reduce---------------------------------------------
-let red = arr.reduce((acc, curr) => {
-  if (acc > curr) acc = curr;
-  return acc;
-});
+{
+  let red = arr.reduce((acc, curr) => {
+    if (acc > curr) acc = curr;
+    return acc;
+  });
 
-console.log(red);
+  console.log(red);
+}
