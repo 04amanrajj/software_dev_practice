@@ -97,7 +97,7 @@ let newFun = function nameFun() {
 // aruguments vs perameters?
 // calling myFun(arug1,arug2) are arguments
 // reciving arguments called perameters like
-// myFun(peram1,peram2)
+// functoin myFun(peram1,peram2){}
 
 // first class function - ability to use like values
 // passing functions as arguments or returning functions as value
