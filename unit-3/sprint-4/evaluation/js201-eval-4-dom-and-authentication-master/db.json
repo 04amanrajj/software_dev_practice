@@ -54474,7 +54474,7 @@
       "id": 86,
       "userId": 1,
       "title": "tame Persian",
-      "completed": false,
+      "completed": true,
       "createdAt": 1670165983413
     },
     {
@@ -54838,7 +54838,7 @@
       "id": 138,
       "userId": 1,
       "title": "actual Siberian",
-      "completed": false,
+      "completed": true,
       "createdAt": 1670165983413
     },
     {
