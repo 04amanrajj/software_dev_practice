@@ -1,0 +1,7 @@
+This msg getting from cli
+this data written by async append
+this data written by async append
+this data is written by append file sync
+this data written by async append
+this data is written by append file sync
+this data written by async append
