@@ -1,0 +1,3 @@
+Method: GET, route: /data, completion time: 5
+Method: GET, route: /data, completion time: 2
+Method: GET, route: /, completion time: 2
