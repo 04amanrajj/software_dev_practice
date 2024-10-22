@@ -1,15 +1,39 @@
+require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const app = express();
 
+// middleware
 app.use(express.json());
 
 //get method
 app.get("/", (req, res) => {
-  const data = fs.readFileSync("./db.json", "utf8");
-  const parseData = JSON.parse(data);
-  res.send(parseData);
+  try {
+    const data = fs.readFileSync("./db.json", "utf8"); //read data
+    const parseData = JSON.parse(data); // parse data
+    res.status(200).send(parseData); //send data
+    console.log("request has excuted successfully");
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+    console.log(error);
+  }
 });
+
+// app.get("/:age", (req, res) => {
+//   try {
+//     let age  = req.params.age;
+//     if(age < 18){
+//       res.status(403).send({error : 'you underage'})
+//     }
+//     const data = fs.readFileSync("./db.json", "utf8");
+//     const parseData = JSON.parse(data);
+//     res.status(200).send(parseData);
+//     console.log('request has excuted successfully')
+//   } catch (error) {
+//     res.status(400).json({error : error.message })
+//     console.log(error);
+//   }
+// });
 
 //post method
 app.post("/", (req, res) => {
@@ -39,7 +63,7 @@ app.get("/:id", (req, res) => {
   parseData.students = parseData.students.filter((ele) => ele.id == id);
 
   if (parseData.students.length === 0) {
-    return res.status(404).send({ message: "Student not found." });
+    return res.status(404).json({ message: "Student not found." });
   }
 
   res.send(parseData);
