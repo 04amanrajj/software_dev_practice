@@ -1,3 +1,10 @@
 Method: GET, route: /data, completion time: 5
 Method: GET, route: /data, completion time: 2
 Method: GET, route: /, completion time: 2
+Method: GET, route: /, completion time: 8
+Method: POST, route: /student/create, completion time: 2
+Method: POST, route: /student/create, completion time: 6
+Method: POST, route: /create, completion time: 4
+Method: GET, route: /student/4, completion time: 3
+Method: GET, route: /student/4, completion time: 3
+Method: DELETE, route: /4, completion time: 2

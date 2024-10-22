@@ -1,5 +1,5 @@
 const { Router } = require("express");
-
+const fs = require("fs");
 const student = Router();
 
 student.get("/", (req, res) => {
@@ -7,7 +7,17 @@ student.get("/", (req, res) => {
 });
 
 student.post("/create", (req, res) => {
-  res.status(200).send("new student added");
+  // read
+  let data = fs.readFileSync("./student.json", "utf8");
+  // parse
+  const parsedData = JSON.parse(data);
+  req.body.id=Math.random()*100
+  // push
+  parsedData.student.push(req.body);
+  // write
+  fs.writeFileSync("./student.json",JSON.stringify(parsedData),"utf8")
+
+  res.status(200).send(req.body);
 });
 
 student.put("/:id", (req, res) => {
