@@ -1,0 +1,12 @@
+{
+    "movies": [
+        {
+            "id": 10,
+            "name": "avatar",
+            "rating": 9,
+            "description": "blue world",
+            "genre": "fantasy",
+            "cast": "blue man"
+        }
+    ]
+}
