@@ -1,0 +1,3 @@
+error HTTP GET /500 2024-10-24T14:01:43.514Z
+error HTTP GET /500 [object Object] 2024-10-24T14:02:14.759Z
+error HTTP GET /500 {"req":{"url":"/500","headers":{"user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"4869dc69-6cc3-48e0-81f4-e8201f489922","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-type":"multipart/form-data; boundary=--------------------------268103715964030111282807","content-length":"126907"},"method":"GET","httpVersion":"1.1","originalUrl":"/500","query":{}},"res":{"statusCode":500},"responseTime":3} 2024-10-24T14:02:36.599Z
