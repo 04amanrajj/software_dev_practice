@@ -1,7 +1,7 @@
 ## Future
 
 DSA-stack revist
-Coding- mongo
+Coding- mongoos
 
 ## current
 
