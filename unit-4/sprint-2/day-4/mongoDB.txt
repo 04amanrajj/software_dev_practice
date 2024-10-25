@@ -1,0 +1,10 @@
+db.users.find({gender:"Male"})
+db.users.find({native:"Japan"})
+db.users.find({$and:[{gender:"Female"},{native:"Japan"}]})
+db.users.find({age:{$gt:25}})
+db.users.find({$and:[{age:{$lt:50}},{native:"United States"}]})
+db.users.countDocuments({relocate_to:"France"})
+db.users.countDocuments({$and:[{native:"United States"},{relocate_to:"Russia"}]}
+db.users.aggregate([{$match:{native:"United States",relocate_to:"Russia"}},{$sort:{age:1}},{$count:"total_users"}])
+db.users.aggregate([{$sort:{family_members:1}},{$sort:{age:-1}}])
+
