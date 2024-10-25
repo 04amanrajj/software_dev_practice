@@ -1,0 +1,48 @@
+{
+    "students": [
+        {
+            "roll_no": 1,
+            "name": "Niko",
+            "location": "New York",
+            "course": "BCA"
+        },
+        {
+            "roll_no": 2,
+            "name": "CJ",
+            "location": "Groove Street",
+            "course": "B.Tech"
+        },
+        {
+            "roll_no": 3,
+            "name": "Trevor",
+            "location": "Los Santos",
+            "course": "BA"
+        },
+        {
+            "roll_no": 4,
+            "name": "Franklin",
+            "location": "Los Santos",
+            "course": "B.Com"
+        }
+    ],
+    "teachers": [
+        {
+            "emp_id": 1,
+            "name": "Mr. Smith",
+            "sub": "Mathematics",
+            "exp": 10
+        },
+        {
+            "emp_id": 2,
+            "name": "Ms. Johnson",
+            "sub": "English",
+            "exp": 8
+        },
+        {
+            "emp_id": 3,
+            "name": "Dr. Williams",
+            "sub": "Physics",
+            "exp": 12
+        }
+    ]
+}
