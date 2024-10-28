@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-require("./config/db");
+const connection = require("./config/db");
 const moviesRoute = require("./routes/movie.route");
 const logger = require("./middleware/winston.middleware");
 
@@ -8,10 +8,13 @@ app.use(logger);
 app.use("/movies", moviesRoute);
 
 // server start
-app.listen(3000, () => {
+app.listen(3000, async () => {
   try {
-    console.log("http://localhost:3000");
+    await connection;
+    console.log("connected to the DB");
   } catch (error) {
+    console.log("DB connection failed")
     console.log(error.message);
   }
+  console.log("http://localhost:3000");
 });
