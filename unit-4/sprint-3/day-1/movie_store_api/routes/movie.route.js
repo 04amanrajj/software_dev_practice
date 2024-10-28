@@ -1,6 +1,6 @@
 const Router = require("express");
 const express = require("express");
-const Moviemodel = require("../db");
+const Moviemodel = require("../model/movie.model");
 const movies = Router();
 
 movies.use(express.json());

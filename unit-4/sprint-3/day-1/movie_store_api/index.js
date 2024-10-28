@@ -1,9 +1,18 @@
 const express = require("express");
 const app = express();
+const dbconnection = require("./config/db")();
 const moviesRoute = require("./routes/movie.route");
+const logger = require("./middleware/winston.middleware");
 
-// middleware
+app.use(logger);
 app.use("/movies", moviesRoute);
 
 // server start
-app.listen(3000, () => console.log("http://localhost:3000"));
+app.listen(3000, () => {
+  try {
+    dbconnection
+    console.log("http://localhost:3000");
+  } catch (error) {
+    console.log(error.message);
+  }
+});
