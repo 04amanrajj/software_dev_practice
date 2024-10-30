@@ -2,6 +2,7 @@ const Router = require("express");
 const express = require("express");
 const Moviemodel = require("../model/movie.model");
 const movies = Router();
+require("dotenv").config();
 
 movies.use(express.json());
 
@@ -38,7 +39,6 @@ movies.get("/", async (req, res) => {
     const sortOrder = order === "desc" ? -1 : 1;
 
     // find by filter
-    console.log(titleFilter);
     const moviesData = await Moviemodel.find({
       title: { $regex: titleFilter.title },
     })
@@ -47,7 +47,6 @@ movies.get("/", async (req, res) => {
       .sort({ [sortby]: sortOrder })
       .limit(Number(limit))
       .skip((Number(page) - 1) * Number(limit));
-
     res.status(200).send(moviesData);
   } catch (error) {
     res.status(400).send({ error: error.message });

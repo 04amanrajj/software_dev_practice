@@ -8,13 +8,13 @@ app.use(logger);
 app.use("/movies", moviesRoute);
 
 // server start
-app.listen(3000, async () => {
+app.listen(process.env.port, async () => {
   try {
     await connection;
     console.log("connected to the DB");
   } catch (error) {
-    console.log("DB connection failed")
+    console.log("DB connection failed");
     console.log(error.message);
   }
-  console.log("http://localhost:3000");
+  console.log(`http://localhost:`);
 });
