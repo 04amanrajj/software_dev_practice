@@ -1,12 +1,12 @@
 ## Future
 
 DSA-stack revist
-Coding- Model–view–controller
+Coding- 
 
 ## current
 
 DSA- stack
-Coding- mongoos
+Coding- relationship
 
 ## Assignment
 
