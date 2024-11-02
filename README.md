@@ -1,11 +1,11 @@
 ## Future
 
-DSA-stack revist
+DSA-linked list
 Coding- figma
 
 ## current
 
-DSA- stack
+DSA- queue
 Coding- relationship
 
 ## Assignment
