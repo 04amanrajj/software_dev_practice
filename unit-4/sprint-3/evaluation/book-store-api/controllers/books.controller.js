@@ -1,4 +1,5 @@
 const BooksModel = require("../models/books.model");
+const { logger } = require("../middlewares/record.middleware");
 
 exports.getAllData = async (req, res) => {
   try {
@@ -38,11 +39,11 @@ exports.updateData = async (req, res) => {
   const payLoad = req.body;
   const bookID = req.params._id;
   try {
-    const updateBook = await BooksModel.findOneAndUpdate(
-      { _id: bookID },
-      { $set: payLoad }
-    );
-    res.status(200).send(updateBook);
+    const book = await BooksModel.findOne({ _id: bookID });
+    if (!book) return res.status(404).send("Book not found");
+    await BooksModel.findOneAndUpdate({ _id: bookID }, { $set: payLoad });
+    logger(`The document with id:${bookID} has been updated`);
+    res.status(200).send("Book updated");
   } catch (error) {
     console.log({ error: error.message });
     res.status(400).send({ error: error.message });
@@ -51,8 +52,11 @@ exports.updateData = async (req, res) => {
 exports.deleteData = async (req, res) => {
   const bookID = req.params._id;
   try {
+    const book = await BooksModel.findOne({ _id: bookID });
+    if (!book) return res.status(404).send("Book not found");
     await BooksModel.findOneAndDelete({ _id: bookID });
-    console.log({ bookID });
+    console.log({ bookID }, { book });
+    logger(`The document with id:${bookID} has been deleted`);
     res.status(200).send("Book removed");
   } catch (error) {
     console.log({ error: error.message });
