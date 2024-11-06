@@ -1,6 +1,6 @@
-const { Router } = require("express");
 const express = require("express");
-const BookModel = require("../models/books.model");
+const { Router } = require("express");
+const { getAllData, createData, updateData, deleteData } = require("../controllers/books.controller");
 
 const bookRoute = Router();
 
@@ -10,22 +10,12 @@ bookRoute.get("/", (req, res) => {
   res.status(200).send("Home");
 });
 
-bookRoute.get("/data", async (req, res) => {
-  try {
-    res.status(200).send("boooks data");
-  } catch (error) {
-    console.log({ error: error.message });
-  }
-});
+bookRoute.get("/data", getAllData);
 
-bookRoute.post("/upload", async (req, res) => {
-  const payLoad = req.body;
-  try {
-    const book = new BookModel(payLoad);
-    await book.save();
-  } catch (error) {
-    console.log({ error: error.message });
-  }
-});
+bookRoute.post("/upload", createData);
+
+bookRoute.patch("/:_id", updateData);
+
+bookRoute.delete("/:_id", deleteData);
 
 module.exports = bookRoute;
