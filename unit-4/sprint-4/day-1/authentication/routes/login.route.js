@@ -1,26 +1,28 @@
 const express = require("express");
 const Router = require("express");
-const UserModel = require("../model/user.model");
 const authRoute = Router();
-
+const { newUser, loginUser } = require("../controllers/user.controller");
 authRoute.use(express.json());
 
 authRoute.get("/", (req, res) => {
   res.send("welcome");
 });
 
-authRoute.post("/register", async (req, res) => {
+authRoute.post("/register", newUser);
+
+authRoute.post("/login", loginUser);
+
+authRoute.get("/cart", (req, res) => {
+  const token = req.query.token;
   try {
-    const user = new UserModel(req.body);
-    await user.save();
-    res.send("resgisterd");
+    if (token == "abc123") {
+      res.send("...DATa");
+    } else {
+      res.status(403).send("login first");
+    }
   } catch (error) {
-    res.status(400).send({ error: error.message });
+    console.log(error.message);
+    res.status(404).send({ error: error.message });
   }
 });
-
-authRoute.post("/login", (req, res) => {
-  res.send("login");
-});
-
 module.exports = authRoute;
