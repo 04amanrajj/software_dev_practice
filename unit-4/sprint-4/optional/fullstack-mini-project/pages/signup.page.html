@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/signup.css">
+    <title>welcome</title>
+  </head>
+  <body>
+    <div class="navbar-container">
+      <a href="/pages/home.page.html">Home</a>
+      <a href="/pages/about.page.html">about</a>
+      <a href="/pages/login.page.html">sign-in</a>
+      <a href="/pages/signup.page.html">login</a>
+    </div>
+    <div class="container">
+      <h2>Register new user</h2>
+      <form>
+        <label for="name">Enter your full name</label>
+        <input id="username" type="text" placeholder="Name" required />
+
+        <label for="email">Enter your email</label>
+        <input id="usermail" type="email" required />
+
+        <label for="dob">Date of Brith</label>
+        <input id="usermail" type="date" required />
+
+        <label for="role">Choose your role</label>
+        <select id="newRole">
+          <option value="explorer">explorer</option>
+          <option value="admin">admin</option>
+        </select>
+
+        <label for="location">Location</label>
+        <input id="location" type="input" required />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="password" required />
+
+        <label for="password">Confirm password</label>
+        <input
+          id="confirm"
+          type="password"
+          placeholder="retype password"
+          required
+        />
+
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+  </body>
+</html>
