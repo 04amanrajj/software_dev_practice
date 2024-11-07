@@ -1,5 +1,3 @@
-/* Minimal CSS for Form (Excluding Navbar) */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -59,7 +57,7 @@ body {
   input[type="input"]:focus,
   input[type="password"]:focus,
   select:focus {
-    border-color: #60a5fa; /* Subtle blue for focus */
+    border-color: #60a5fa; 
   }
   
   input[type="submit"] {
@@ -69,7 +67,7 @@ body {
     font-size: 1rem;
     font-weight: bold;
     color: #ffffff;
-    background-color: #2563eb; /* Soft blue for button */
+    background-color: #2563eb; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -77,6 +75,6 @@ body {
   }
   
   input[type="submit"]:hover {
-    background-color: #1d4ed8; /* Darker blue on hover */
+    background-color: #1d4ed8; 
   }
   
