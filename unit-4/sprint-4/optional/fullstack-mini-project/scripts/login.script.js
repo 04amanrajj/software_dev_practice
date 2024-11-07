@@ -1,4 +1,4 @@
-const registerURL = "http://localhost:3400/login";
+const loginURL = "http://localhost:3400/login";
 
 const form = document.querySelector("form");
 form.addEventListener("submit", async (e) => {
@@ -13,13 +13,16 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    await fetch(registerURL, {
+    let response = await fetch(loginURL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(obj),
     });
+    let data = await response.json();
+    console.log(data);
+    localStorage.setItem("token", data.token);
   } catch (error) {
     console.log({ error: error.message });
   }
