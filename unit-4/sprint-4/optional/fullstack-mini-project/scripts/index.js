@@ -7,12 +7,13 @@ async function loadData() {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": token,
-      }
+        Authorization: token,
+      },
     });
     let data = await response.json();
-    console.log("ok");
-    console.log(data);
+    console.log(response);
+    textBox.innerHTML = `
+    <pre>${data.data|| "Token expired re-login to recreate token"}</pre>`;
   } catch (error) {
     console.log({ error: error.message });
   }
