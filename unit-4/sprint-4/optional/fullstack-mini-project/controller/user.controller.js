@@ -33,7 +33,7 @@ exports.loginUser = async (req, res) => {
       logger.info(`${user.name} who's role is ${user.role} logged in`);
       res
         .status(200)
-        .send({ name: user.name, msg: "Logged in", token, role: user.role });
+        .send({ msg: "Logged in", token, user });
     } else {
       res.status(404).send({ msg: "User not found" });
       return;

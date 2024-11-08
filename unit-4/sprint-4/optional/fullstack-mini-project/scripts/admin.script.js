@@ -1,7 +1,8 @@
 const usersdataURL = "http://localhost:3400/user";
 const userBox = document.querySelector(".users-box");
 const token = localStorage.getItem("token");
-const userRole = localStorage.getItem("user_role");
+const storedUser = localStorage.getItem("logged_in_user");
+const userRole = storedUser ? JSON.parse(storedUser).role : null;
 
 async function loadData() {
   try {
@@ -20,6 +21,8 @@ async function loadData() {
     <pre>${"you are not an admin login as admin to continue"}</pre>`;
     }
   } catch (error) {
+    userBox.innerHTML = `
+    <pre>${"Token expired"}</pre>`;
     console.log({ error: error.message });
   }
 }
@@ -38,7 +41,6 @@ function displayUsers(data) {
           <p><strong>Role:</strong> ${element.role}</p>
           <p><strong>Location:</strong> ${element.location}</p>
           <button class="delete">Delete</button>
-          <hr>
         </div>
       `;
     userBox.append(div);
@@ -50,7 +52,7 @@ function displayUsers(data) {
         await fetch(`http://localhost:3400/delete${element._id}`, {
           method: "DELETE",
         });
-        div.remove()
+        div.remove();
       } catch (error) {
         console.log({ error: error.message });
       }

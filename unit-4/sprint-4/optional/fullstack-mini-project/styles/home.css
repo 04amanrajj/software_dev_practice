@@ -38,7 +38,6 @@ body {
   .text-showcase {
     margin-top: 20px;
     background-color: #e0e7ff;
-    min-height: 200px;
     height: fit-content;
     border: 1px solid #cbd5e1;
     border-radius: 8px;

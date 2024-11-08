@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarContainer = document.createElement("div");
   navbarContainer.className = "navbar-container";
 
-  const username = localStorage.getItem("logged_in_user");
+  const currentUser = localStorage.getItem("logged_in_user");
+  const username = currentUser ? JSON.parse(currentUser).name : "Login";
 
   navbarContainer.innerHTML = `
 <style>
@@ -43,19 +44,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // Prepend the navbar to the body
   document.body.prepend(navbarContainer);
 
-  if (username) {
+  if (currentUser) {
     const loginTag = document.querySelector("#loginTag");
     loginTag.textContent = username;
-    loginTag.href = "#";
+    // loginTag.href = "#";
 
     const signupTag = document.querySelector("#signupTag");
     signupTag.textContent = "Logout";
-    signupTag.addEventListener("click",()=>{
-      localStorage.removeItem("token")
-      localStorage.removeItem("logged_in_user")
-      localStorage.removeItem("user_role")
-      location.reload()
-    })
+    signupTag.addEventListener("click", () => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("logged_in_user");
+      location.reload();
+    });
     signupTag.href = "#";
   }
 });
