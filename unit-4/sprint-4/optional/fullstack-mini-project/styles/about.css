@@ -41,12 +41,13 @@ p {
 }
 
 ul {
+  text-align: left;
   list-style-type: none;
   padding: 0;
 }
 
 ul li {
   font-size: 1.125rem;
-  color: #2563eb;
+  color: #333;
   margin-bottom: 10px;
 }

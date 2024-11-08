@@ -38,8 +38,16 @@ body {
   .text-showcase {
     margin-top: 20px;
     background-color: #e0e7ff;
-    height: 200px; /* Placeholder height */
+    min-height: 200px;
+    height: fit-content;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
   }
   
+  pre {
+    font-size: large;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 10px;
+}

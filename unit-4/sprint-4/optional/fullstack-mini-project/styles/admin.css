@@ -1,0 +1,9 @@
+.users-box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+}
+.users-box hr{
+    width: 90%;
+    margin: 10px 0;
+}
