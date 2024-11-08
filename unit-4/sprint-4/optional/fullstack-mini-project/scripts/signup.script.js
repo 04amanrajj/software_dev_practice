@@ -30,6 +30,8 @@ form.addEventListener("submit", async (e) => {
       },
       body: JSON.stringify(obj),
     });
+    alert("New user registerd")
+    window.location.href = "/pages/login.page.html"
   } catch (error) {
     console.log({ error: error.message });
   }
