@@ -1,0 +1,130 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    background-color: #1a73e8;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 18px;
+  }
+  
+  /* Container styling */
+  .container, #post-box {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+  
+  /* Post box styling */
+  #post-box .post h2 {
+    color: #1a73e8;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #post-box .post p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  #post-box .post h2 + p {
+    margin-top: -5px;
+  }
+  
+  #post-box .post {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  #post-box .post:last-child {
+    border-bottom: none;
+  }
+  
+  /* Typography */
+  h1, h2, h3 {
+    color: #1a73e8;
+    text-align: center;
+  }
+  
+.post h2{
+    text-align: left;
+
+}
+  /* Buttons */
+  button, input[type="submit"] {
+    background-color: #ea4335;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover, input[type="submit"]:hover {
+    background-color: #cc3333;
+  }
+  
+  /* Form inputs */
+  input[type="text"], input[type="email"], input[type="password"], #device, #gender, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    height: 176px;
+  }
+  
+  /* Links */
+  a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Form container styling */
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  

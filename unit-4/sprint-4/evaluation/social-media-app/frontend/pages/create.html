@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css">
+    <title>home</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="/index.html">home</a></li>
+        <li><a href="/pages/create.html">create</a></li>
+        <li><a href="/pages/login.html">login</a></li>
+        <li><a href="/pages/signup.html">signup</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <h1>create your post</h1>
+      <form>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required />
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <label for="device">Device</label>
+        <select id="device" name="device">
+          <option value="desktop">Desktop</option>
+          <option value="mobile">Mobile</option>
+          <option value="tablet">Tablet</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script type="module" src="/script/create.js"></script>
+</html>
