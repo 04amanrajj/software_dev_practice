@@ -19,7 +19,7 @@ usersRoute.post("/signup", async (req, res) => {
     // check email
     const existingUser = await UserModel.findOne({ email: payLoad.email });
     if (existingUser)
-      throw new Error({ message: "User existed with this email" });
+      return res.status(404).send({ message: "User existed with this email" });
 
     // secure password
     const hashedPassword = await bcrypt.hash(payLoad.password, 10);
@@ -42,11 +42,11 @@ usersRoute.post("/login", async (req, res) => {
 
     // check for user
     const user = await UserModel.findOne({ email: payLoad.email });
-    if (!user) throw new Error("User not found");
+    if (!user) return res.status(404).send({ message: "User not found" });
 
     // compare password
     bcrypt.compare(payLoad.password, user.password, (err, result) => {
-      if (!result) return res.status(400).send("Password is incorrect");
+      if (!result) return res.status(400).send({message:"Password is incorrect"});
       // create token
       const token = jwt.sign({ userID: user._id }, process.env.SECRET_KEY, {
         expiresIn: 600,
