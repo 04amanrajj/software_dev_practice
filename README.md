@@ -1,16 +1,16 @@
 ## Future
 
-DSA-linked list
-Coding- Authentication
+DSA-None
+Coding- Done
 
 ## current
 
-DSA- queue
-Coding- relationship
+DSA- linked list
+Coding- Done
 
 ## Assignment
 
-DSA-
-CODING-done
+DSA- linked list
+CODING- Done
 
 ## unit 4 start: 12 oct
