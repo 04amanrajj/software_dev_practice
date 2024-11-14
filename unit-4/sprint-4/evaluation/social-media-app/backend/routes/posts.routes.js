@@ -1,14 +1,18 @@
 const express = require("express");
 const { Router } = require("express");
 const { PostModel } = require("../models/posts.model");
-const jwt = require("jsonwebtoken");
 const postsRoute = Router();
 
 postsRoute.use(express.json());
 
 postsRoute.get("/", async (req, res) => {
   try {
-    const posts = await PostModel.find();
+    console.log(req.query);
+    const device = req.query.device;
+    const query = {};
+    if (device) query.device = device;
+    const posts = await PostModel.find(query);
+    // console.log({query});
     res.send({ message: posts });
   } catch (error) {
     console.log(error.message);
