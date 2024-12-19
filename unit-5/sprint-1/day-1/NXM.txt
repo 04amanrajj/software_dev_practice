@@ -1,0 +1,56 @@
+NXM
+
+Node -> environment to run js outside the browser
+deno
+bun
+
+Node
+
+in-built -> fs, http, os,dns
+external -> npm packages -> 1.3 million
+own modules -> 
+
+
+common js way
+const x = require("y")
+module.exports =
+
+ES6 way -> import x from y, export xyz
+
+Can I build a server just using node - is it possible?
+http inbuilt module of node;
+
+Express?
+method + /
+middleware ecosystem
+
+MongoDB -> CRUD+ things done for us
+
+Mongoose -> to connect application to the DB
+Mongo Drivers
+
+Can we make an API request in our backend application/server
+yes
+
+fetch -> latest version of node -> 18
+axios
+node-fetch
+
+Create an express server, have /users endpoint, get users data from jsonplaceholder site and send that as response
+node-fetch library
+
+^ do finish it
+
+images, audio, video -> DB?
+
+{
+    name : "x",
+    age : "25",
+    image : profile_pic_link.jpeg
+}
+multer
+
+MongoDB CRUD
+
+
+
