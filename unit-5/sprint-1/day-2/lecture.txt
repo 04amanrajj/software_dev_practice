@@ -1,0 +1,110 @@
+Mongo - Advanced Queries
+
+More queries
+
+100 documents -> User's collection
+
+/users?page=2
+
+1. DB Query -> UserModel.find({}).skip((n-1)*10).limit(10)
+
+                    OR 
+
+2. Login in your application
+
+const users = UserModel.find()
+page = 2
+
+for loop,
+slice
+
+30,000 documents
+
+
+API's + Interacting with DB
+
+
+MongoDB
+
+DB -> collection -> documents
+
+document 
+
+1. Key-value pair -> health : 35
+2. Key : array of objects/numbers/strings etc
+3. Key : object
+
+1. 
+  Find a hero who's health is 40
+  batman
+
+2. Find a hero who's fav color is red and age 44.
+   db.heros.find({metadata:{favouriteColor:"red",age:44}}).pretty()
+
+   db.heros.find({metadata:{age:44,favouriteColor:"red"}}).pretty()
+   no response
+   Exact order matters
+
+   db.heros.find({metadata:{favouriteColor:"red"}}).pretty()
+   no response
+
+3. Find heros who's fav color is red
+db.heros.find({"metadata.favouriteColor":"red"}).pretty()
+Ironman and Spiderman
+
+4. Find heros who's age is less than 50
+db.heros.find({"metadata.age" : {$lt : 50}}).pretty()
+4 heros
+
+
+  {
+    metadata : {
+        favouriteColor : {
+            day_time : "lavender",
+            night_time : "blue"
+        }
+        age : 44
+    }
+  }
+
+  "metadata.favouriteColor.day_time"
+
+
+5. Find all heros who's powers are robot and money;
+db.heros.find({powers : ["robot","money"]}).pretty()
+ironman
+
+db.heros.find({powers : ["money","robot"]}).pretty()
+order matters
+
+
+6. Find a hero who's powers is magic
+db.heros.find({powers : ["magic"]}).pretty()
+
+7. Find a heros who's powers is intelligence and money, irrespective of the order;
+    $all
+    db.heros.find({powers : {$all : ["money","intelligence"]}}).pretty()
+
+    $in -> any in that array;
+
+8. Find all heros who's villains has name Hela;
+db.heros.find({villains:{name:"Hela",health:87}}).pretty()
+
+ db.heros.find({villains:{health:87,name:"Hela"}}).pretty()
+ no response
+
+db.heros.find({"villains.name":"Hela"}).pretty()
+Strange and Thor;
+
+
+9. Find all heros who's villains health is 100
+db.heros.find({"villains.health":100}).pretty()
+
+
+projection in mongodb
+
+projection 
+1 for inclusion
+0 for exclusion
+
+
