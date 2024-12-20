@@ -1,0 +1,96 @@
+Aggregation - 
+
+Aggregate - collecting something
+
+1.
+  get something from MongoDB -> and then process in our application/server -> send that response.
+   
+    OR
+
+2. to write query in such a way that most of the processing is done by query itself - Better way
+
+Aggregation - very powerful concept
+-> collect different queries
+
+pipeline
+stage 
+
+Order of different stages does matter.
+
+Syntax
+
+db.collection_name.find({......}).pretty()
+
+db.collection_name.aggregate([{stage1}, {stage2}, {stage3}.....{stagen}])
+
+the stage "n", applies on result of stage "n-1"
+
+sample dataset - https://pastebin.com/PrSnBdkx
+
+
+mongodb Aggregation pipeline operators
+
+https://www.mongodb.com/docs/manual/reference/operator/aggregation/
+
+db.orders.aggregate([]).pretty()
+
+1. $limit
+
+db.orders.aggregate([{$limit : 3}]).pretty()
+
+2. $sort
+db.orders.aggregate([{$sort : {price:-1}}]).pretty()
+
+combine?
+
+ db.orders.aggregate([{$limit : 3}, {$sort : {price : -1}}]).pretty() - 2,1,0
+
+db.orders.aggregate([{$limit : 4},{$sort : {price : -1}}]).pretty() - 2, 1, 0, 3
+
+db.orders.aggregate([{$sort : {price : -1}},{$limit : 4}]).pretty() - 2, 1, 0, 7
+
+Order does matter - is that clear? 
+
+3.  $match
+
+  db.orders.aggregate([{$match : {name:"Cheese"}}]).pretty()
+
+  Find all the large size pizzas, who's price is less than 20
+  
+   db.orders.aggregate([{$match : {size:"large"}}, {$match : {price:{$lt : 20}}}]).pretty()
+   db.orders.aggregate([{$match : {size:"large", price:{$lt : 20}}}]).pretty()
+
+
+   Find all the pepperoni pizzas, who's price is lte 20
+
+4
+     $group
+
+     It's used to group by "something/commanlity/logic", like "course", "batch", "city" etc
+     _id : "city" - mandatorily
+
+     
+db.orders.aggregate([{$group : {_id : "$size"}}]).pretty()
+
+try grouping by name, price
+^ copy paste the query 
+
+db.orders.aggregate([{$group : {_id : "$name", totalrupees : {$sum :"$price"}}}]).pretty()
+
+_id : 
+
+
+
+
+Find total quantity of only medium sized pizzas
+
+
+Deal breaking question
+
+
+Find the state with largest population
+db.zips.aggregate([{$group : {_id : "$state", total_pop : {$sum : "$pop"}}}, {$sort : {total_pop : -1}}, {$limit : 1}]).pretty()
+{ "_id" : "CA", "total_pop" : 29754890 }
+
+$lookup operator - do explore this mongodb aggregation operator
+
