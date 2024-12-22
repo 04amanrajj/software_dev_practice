@@ -1,0 +1,78 @@
+Aggregation operators
+
+[1stage, 2nd stage, 3rd stage] => output
+
+$match, $limit, $group, $sort
+
+Relationships
+
+
+
+blogs collection - dependent
+title,
+content,
+author_email 
+
+users collection - independent
+name,
+email,
+
+
+$lookup operator
+
+db.users.aggregate([{$lookup : {from : "blogs", localField : "email", foreignField : "author_email", as : "my blogs"}}])
+
+
+$project 
+
+$count 
+
+$set -> field value
+
+$out -> {$out : "collection_name"}
+
+$lookup, project, count, set, out
+
+
+//designing an aggregation pipeline
+
+*users*
+name,
+age,
+city,
+phone_number
+
+we want all users, in the increasing order of their age, who are from Pune
+
+db.users.aggregate([{$sort : {age : 1}}, {$match : {city : "Pune"}}])
+
+1. will this query work? - Yes
+2. is it the best way of writing it? - No
+
+db.users.aggregate([{$match : {city : "Pune"}}, {$sort : {age : 1}}])
+
+
+Database optimisation
+
+Performance of the DB?
+
+Database
+- Disk -> HDD/SSD
+- IO per second -> input output -> read/write
+
+Ram is 20-25 times faster than the Disk.
+
+Servers -> SSD
+
+db.users.aggregate([{$sort : {age : 1}}])  
+
+latency -> the less it is, the better it is
+bandwidth -> the more it is, the better it is
+
+
+where our DB is?
+
+1 in the US
+1 in the mumbai
+
+Indexing? in one of the classes in this week
