@@ -1,0 +1,87 @@
+Authentication  + Blacklisting and refresh tokens
+
+Authentication -> the process of *identifying* who the user/someone is.
+
+Authorisation -> the process of identifying what access does the user have OR what permission does a user have
+
+Authentication
+
+    /signup or /register
+
+
+    /login
+     they get back token
+
+    /reports - protected enpoint - requires authentication
+    check token -> isVerfied ? give access : plz login first
+
+
+
+Blacklisting
+
+
+   /logout
+
+
+const blacklisted_tokens = [
+   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2M2RhMDdiZjZmNjViYWVkZjllYjNmZDMiLCJpYXQiOjE2NzUyMzQxMzh9.cJJAFqMBQ1ts3LOLoR6wUstRZIDnLc3BRujHDy_bqUM
+]
+
+
+refresh tokens
+
+Expiry time -> 7 days 
+
+/login -> gets token
+/reports -> gives token -> 
+
+after 7 days -> token is expired -> login -> authcheck and a new token is given back
+
+
+7 days
+
+ -----------------------------------------------------------
+/login 
+      jwt normal token -> 7 days
+      jwt refresh token -> 28 days
+
+after a user is logged in -> normal token and refresh token
+
+/reports - normal token -> 7 days it is expired
+
+/refresh -> 
+Refresh token - it allows the client to get a new normal token(when the prev token is expired) 
+without having to going through the auth process again
+
+
+normal token - 7 days
+
+/reports - 8th day - client will use refresh token to get new normal token for the next 7 days;
+
+refresh token - 28 days
+
+Advantages : 
+1. Improved user experience
+2. Reduced load on the server (for authentication)
+3. Improved security
+
+normal token - - 100 requests /reports
+backup -> refresh token - 28 days
+
+
+14 days -> 200 api requests -> 200 times
+
+
+wallet -> 1000, 500 rupees -> normal money --> normal token
+500 rupees -> backup ---> refresh token
+
+
+Hints : 
+/login -> generate two tokens with 2 separate keys, and give proper expriry time;
+
+/reports -> normal token -> normal secret key
+
+GET /getnewnormaltoken -> refresh token -> REFRESH_SECRET key -> verified ? give them a new normal token : login again
+
+CRUD APPLICATION - FULL STACK
+notes app, blogs app, todo app
