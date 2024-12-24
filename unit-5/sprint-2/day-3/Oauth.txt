@@ -1,0 +1,45 @@
+Oauth -> Open Auth
+
+Auth -> Authentication/Authorisation
+
+Oauth -> allows a user to grant an application(masaischool.com, cyclic) access to their resources(name, dob, profile pic)
+without sharing their passwords.
+
+Steps : 
+1. The user is asked to grant permission -okay, deny
+2. the user is redirected to the service provider(google, github)
+3. the service provider generates Oauth token and sends it back to the application.
+4. this application uses that Oauth token to identify/access the user's resources.
+
+Advantages
+1. Smooth login/improved user experience  - user is not required remember password, faster
+2. More security
+3. controlling what an application can access
+
+Disadvantages
+1. Relying/depending on third party service provider.
+2. Complexity in our backend application -> different service providers have their
+own rules/ways/methods of how a developer should implement Oauth
+    2 Oauth -> Github and Google -> Authentication code for these 2 Oauth's separately
+
+Oauth - !Evaluation, !company assignments
+
+Implementation steps : 
+
+1. Choose an Oauth service provider ->
+  Decide which service provider you want to use -> Google, Facebook, github etc
+
+2. Register our application -> 
+   Register with the service provider, follow the instructions, register and -> client ID and client secret.
+
+3. Install an Oauth library -> 
+    Use a library like passport 
+
+4. Setup the Oauth flow
+use the library to handle the Oauth flow in your nodejs application
+
+5. Use the access token 
+   authenticate user/ request to the Oauth provider to get user's resources.
+
+
+Implement Google Oauth
