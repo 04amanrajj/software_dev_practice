@@ -18,10 +18,11 @@ app.get("/:id", async (req, res) => {
     let cached_data = await client.get(id);
 
     if (cached_data) {
+      console.log("YEs"); //10ms
       console.log(JSON.parse(cached_data));
       return res.status(200).send(JSON.parse(cached_data));
     }
-
+    console.log("NO"); //1sec
     let response = await axios.get(`https://api.github.com/users/${id}`);
     response = response.data;
     await client.set(id, JSON.stringify(response));
