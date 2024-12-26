@@ -1,0 +1,86 @@
+Redis - Caching
+SQL - MySQL, Postgres
+NoSQL - MongoDB,
+GraphDB - neo4j
+KV - key value
+Redis
+Remote Dictionary Server
+
+Re Di s
+
+Redis
+
+Its an open source tool
+
+fast
+
+store data and maintain it in memory
+
+Note
+redis is used for caching
+db, publisher-subscriber, message
+https://try.redis.io/ https://onecompiler.com/redis https://redis.io/commands
+
+CRUD
+Data types
+STRING
+LIST ( array )
+SET
+SORTED SET
+HASH
+STRING
+SET
+GET
+EXPIRY
+
+SETEX
+MSET
+MGET
+cons
+memory
+stale data
+LISTS
+like an array of strings
+
+it does not use arrays, but instead use Linked List ( Redis internally stores this as a LL )
+
+push into the left or right ( head or tail )
+
+LPUSH
+
+LRANGE key 0 2
+
+LRANGE key 0 -1 ( for all elements )
+
+RPUSH
+
+LPOP
+
+RPOP
+
+LLEN
+
+LINDEX, LSET, LPUSHX, LINSERT ( other commands you can look into )
+
+problem
+work with LIsts
+use push, use range, pop elements, get length
+SETS
+store all the ips associated to a user
+we can just add using sets
+new Set()
+SADD
+SMEMBERS
+SISMEMBER
+SCARD
+SDIFF
+SUNION
+SREM
+SPOP
+SMOVE
+HASHMAP
+HMSET
+HGETALL
+HGET
+HEXISTS
+HDEL
