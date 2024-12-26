@@ -18,15 +18,14 @@ app.get("/:id", async (req, res) => {
     let cached_data = await client.get(id);
 
     if (cached_data) {
-      console.log("YEs"); //10ms
-      console.log(JSON.parse(cached_data));
+      console.log("on redis - YES"); //10ms
       return res.status(200).send(JSON.parse(cached_data));
     }
-    console.log("NO"); //1sec
     let response = await axios.get(`https://api.github.com/users/${id}`);
     response = response.data;
+    console.log({ response }, "on redis - NO"); //1sec
     await client.set(id, JSON.stringify(response));
-    console.log(response);
+    await client.expire(id, 10); //will expire after 10sec
     res.status(200).send({ data: response });
   } catch (error) {
     res.status(500).send(error.message);
