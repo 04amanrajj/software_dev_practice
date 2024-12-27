@@ -1,16 +1,15 @@
 const express = require("express");
-const redis = require("redis");
-const client = redis.createClient();
 const axios = require("axios");
 const app = express();
 app.use(express.json());
-
-client.on("err", (error) => {
-  console.log(error);
+const redis = require("redis");
+const client = redis.createClient({
+  url: "redis://default:8520@redis-13668.c305.ap-south-1-1.ec2.redns.redis-cloud.com:13668",
 });
-client.connect(
-  "redis://default:8520@redis-13668.c305.ap-south-1-1.ec2.redns.redis-cloud.com:13668"
-);
+client.on("err", (error) => {
+  console.error("redis on", error.message);
+});
+client.connect();
 
 app.get("/:id", async (req, res) => {
   try {
@@ -25,7 +24,7 @@ app.get("/:id", async (req, res) => {
     response = response.data;
     console.log({ response }, "on redis - NO"); //1sec
     await client.set(id, JSON.stringify(response));
-    await client.expire(id, 10); //will expire after 10sec
+    await client.expire(id, 600); //will expire after 10sec
     res.status(200).send({ data: response });
   } catch (error) {
     res.status(500).send(error.message);
