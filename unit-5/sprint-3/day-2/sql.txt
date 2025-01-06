@@ -1,0 +1,87 @@
+-- Create a database
+CREATE DATABASE school;
+
+-- Use the database
+USE school;
+
+-- Create a table
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    age INT,
+    grade CHAR(1),
+    department VARCHAR(30),
+    enrollment_date DATE
+);
+
+-- Insert data
+INSERT INTO students (name, age, grade, department, enrollment_date)
+VALUES 
+    ('John Doe', 20, 'A', 'Computer Science', '2023-09-01'),
+    ('Jane Smith', 19, 'B', 'Physics', '2023-09-01'),
+    ('Mike Johnson', 21, 'A', 'Mathematics', '2023-08-15');
+
+-- Alter table: Add a new column
+ALTER TABLE students ADD COLUMN email VARCHAR(100);
+
+-- Alter table: Modify column
+ALTER TABLE students MODIFY COLUMN name VARCHAR(100);
+
+-- Update data
+UPDATE students SET email = 'john@example.com' WHERE name = 'John Doe';
+
+-- Basic SELECT with WHERE
+SELECT name, age, grade 
+FROM students 
+WHERE grade = 'A';
+
+-- ORDER BY: Sort results
+SELECT name, age, grade 
+FROM students 
+ORDER BY age DESC;
+
+-- GROUP BY with aggregation
+SELECT department, COUNT(*) as student_count, AVG(age) as avg_age
+FROM students 
+GROUP BY department;
+
+-- LIMIT: Restrict number of results
+SELECT * FROM students 
+ORDER BY enrollment_date DESC 
+LIMIT 2;
+
+-- JOIN example (with a new table)
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50),
+    credits INT
+);
+
+INSERT INTO courses VALUES 
+    (1, 'Introduction to Programming', 3),
+    (2, 'Calculus I', 4);
+
+CREATE TABLE enrollments (
+    student_id INT,
+    course_id INT,
+    semester VARCHAR(20),
+    FOREIGN KEY (student_id) REFERENCES students(id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+
+-- Inner JOIN
+SELECT s.name, c.course_name, e.semester
+FROM students s
+INNER JOIN enrollments e ON s.id = e.student_id
+INNER JOIN courses c ON e.course_id = c.course_id;
+
+-- Left JOIN
+SELECT s.name, c.course_name
+FROM students s
+LEFT JOIN enrollments e ON s.id = e.student_id
+LEFT JOIN courses c ON e.course_id = c.course_id;
+
+-- Subquery example
+SELECT name, age
+FROM students
+WHERE age > (SELECT AVG(age) FROM students);
