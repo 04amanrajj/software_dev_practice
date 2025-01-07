@@ -1,0 +1,27 @@
+-- INNER JOIN
+-- Returns only the matching records from both tables
+SELECT o.order_id, c.customer_name, o.order_date
+FROM orders o
+INNER JOIN customers c
+ON o.customer_id = c.customer_id;
+
+-- LEFT JOIN (or LEFT OUTER JOIN)
+-- Returns all records from left table and matching records from right table
+SELECT c.customer_name, o.order_id
+FROM customers c
+LEFT JOIN orders o
+ON c.customer_id = o.customer_id;
+
+-- RIGHT JOIN (or RIGHT OUTER JOIN)
+-- Returns all records from right table and matching records from left table
+SELECT c.customer_name, o.order_id
+FROM customers c
+RIGHT JOIN orders o
+ON c.customer_id = o.customer_id;
+
+-- FULL JOIN (or FULL OUTER JOIN)
+-- Returns all records from both tables, matching where possible
+SELECT c.customer_name, o.order_id
+FROM customers c
+FULL OUTER JOIN orders o
+ON c.customer_id = o.customer_id;
