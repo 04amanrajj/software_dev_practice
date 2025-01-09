@@ -1,12 +1,12 @@
 ## Future
 
-DSA-None
-Coding- Done
+DSA-backtracking, binary seach, sliding window
+Coding-oauth, websockets, socket io
 
 ## current
 
-DSA- linked list
-Coding- Done
+DSA-recursion 
+Coding-monitoring & logging, aws, ci/cd
 
 ## Assignment
 
@@ -24,10 +24,5 @@ queues
 sorting
 sliding window
 two pointer
-
-## Pending
-recursion
-backtracking
-binary seach
 
 ## unit 5 start: 16 dec
