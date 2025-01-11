@@ -6,11 +6,11 @@ Coding-oauth, websockets, socket io
 ## current
 
 DSA-recursion 
-Coding-monitoring & logging, aws, ci/cd
+Coding-SQL,monitoring & logging, aws, ci/cd
 
 ## Assignment
 
-DSA- linked list
+DSA- recursion
 CODING- Done
 
 ## unit 5 start: 16 dec
