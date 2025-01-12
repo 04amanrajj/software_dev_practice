@@ -3,7 +3,7 @@
 DSA-backtracking, binary seach, sliding window
 Coding-oauth, websockets, socket io
 
-## current
+## Current
 
 DSA-recursion 
 Coding-SQL,monitoring & logging, aws, ci/cd
