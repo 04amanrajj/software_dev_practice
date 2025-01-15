@@ -207,3 +207,29 @@ CREATE TABLE "mytable" (
   ('Uruguay','South America',181034,3286314,'49919000000','Montevideo','.uy','https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg'),
   ('Venezuela','South America',916445,28946101,'382424000000','Caracas','.ve','https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg');
   
+SELECT *
+FROM world AS x
+WHERE area >= ALL (
+SELECT area
+FROM world y
+WHERE y.continent = x.continent
+AND area>0);
+
+SELECT continent, min(name) AS small
+FROM world
+GROUP BY continent;
+
+SELECT DISTINCT continent 
+FROM world;
+
+SELECT name, continent, population
+FROM world
+WHERE continent IN (SELECT continent
+FROM world
+GROUP BY continent
+HAVING max(population)<= 25000000 );
+
+SELECT continent
+FROM world
+GROUP BY continent
+HAVING max(population)<= 25000000;
