@@ -3,12 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login with GitHub</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
+      .login-container {
+        text-align: center;
+      }
+      .login-button {
+        background-color: #24292e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .login-button:hover {
+        background-color: #444d56;
+      }
+    </style>
   </head>
   <body>
-    <a
-      href="https://github.com/login/oauth/authorize?client_id=Ov23liwjtqTpvTq2FeZX"
-      ><button>login with Github</button></a
-    >
+    <div class="login-container">
+      <h1>Oauth Testing</h1>
+      <a
+        href="https://github.com/login/oauth/authorize?client_id=Ov23liwjtqTpvTq2FeZX"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button class="login-button">Login with GitHub</button>
+      </a>
+    </div>
   </body>
 </html>
