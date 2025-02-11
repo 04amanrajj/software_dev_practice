@@ -8,9 +8,9 @@ app.use(express.json());
 
 app.get("/", async (req, res) => {
   try {
-    res.send("Homepage");
+    res.sendFile(__dirname + "/homepage.html");
   } catch (error) {
-    res.send(error);
+    res.status(500).send(error.message);
   }
 });
 
@@ -22,7 +22,7 @@ app.get("/login", async (req, res) => {
   }
 });
 
-app.get("/github/auth", async (req, res) => {
+app.get("/auth/github", async (req, res) => {
   try {
     const { code } = req.query;
     const response = await axios.post(
