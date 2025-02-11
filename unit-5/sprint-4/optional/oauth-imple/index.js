@@ -1,7 +1,8 @@
 const express = require("express");
 const axios = require("axios");
-
+const passport = require("./google-auth");
 require("dotenv").config();
+
 const app = express();
 
 app.use(express.json());
@@ -47,6 +48,27 @@ app.get("/auth/github", async (req, res) => {
     res.send(error);
   }
 });
+
+//google oauth
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] }),
+  () => {
+    console.log("HIG");
+  }
+);
+
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/",
+    session: false,
+  }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    res.send(req.user);
+  }
+);
 
 app.listen(5300, () => {
   console.log("Server running at http://localhost:5300");
