@@ -1,0 +1,26 @@
+# Workflow
+# YAML -> YAML aint a markup language
+# read and understand a series of steps or operations # this can be read by the machine to automate tasks
+# key: value
+# key - title
+# value - Website Name
+title: Website Name
+description: A website for uploading content
+age: 30
+# string, arrays, objects
+# Array
+tags:
+  - technology
+  - images
+  - creative
+
+# Object
+address:
+  - city: somthing
+  - state: somthing
+  - pin: somthing
+
+# ENV
+env: ${{ env.value }}
+# Indentation matters
+# spaces
